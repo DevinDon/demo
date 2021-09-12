@@ -27,6 +27,13 @@
     ]
   },
   "projects": {
+    "blog-2017": {
+      "tags": []
+    },
+    "blog-2017-e2e": {
+      "tags": [],
+      "implicitDependencies": ["blog-2017"]
+    },
     "blog-2018": {
       "tags": []
     },
