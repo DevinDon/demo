@@ -1,7 +1,123 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "blog-2018": {
+      "projectType": "application",
+      "root": "apps/blog-2018",
+      "sourceRoot": "apps/blog-2018/src",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/blog-2018",
+            "index": "apps/blog-2018/src/index.html",
+            "main": "apps/blog-2018/src/main.ts",
+            "polyfills": "apps/blog-2018/src/polyfills.ts",
+            "tsConfig": "apps/blog-2018/tsconfig.app.json",
+            "assets": [
+              "apps/blog-2018/src/favicon.ico",
+              "apps/blog-2018/src/assets"
+            ],
+            "styles": ["apps/blog-2018/src/styles.less"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/blog-2018/src/environments/environment.ts",
+                  "with": "apps/blog-2018/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "blog-2018:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "blog-2018:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/blog-2018/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/blog-2018"],
+          "options": {
+            "jestConfig": "apps/blog-2018/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "blog-2018-e2e": {
+      "root": "apps/blog-2018-e2e",
+      "sourceRoot": "apps/blog-2018-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/blog-2018-e2e/cypress.json",
+            "devServerTarget": "blog-2018:serve",
+            "tsConfig": "apps/blog-2018-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "blog-2018:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/blog-2018-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/web"
+  },
+  "defaultProject": "blog-2018",
+  "generators": {
+    "@nrwl/web:application": {
+      "style": "less",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/web:library": {
+      "style": "less",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    }
   }
 }
