@@ -1,0 +1,60 @@
+#content-about {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+#content-about>.text {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#content-about>.where {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+#content-about>.where>.card {
+  border-radius: 2px;
+  text-align: center;
+  height: 10rem;
+  width: 10rem;
+  padding: 1rem;
+  transition: var(--transition);
+  border: 0.2rem dashed var(--color-light);
+}
+
+#content-about>.where>.card:hover {
+  border: 0.2rem dashed;
+  transition: var(--transition);
+}
+
+@keyframes invertTo100 {
+  from { filter: invert(0%); }
+  to { filter: invert(100%); }
+}
+
+@keyframes invertFrom100 {
+  from { filter: invert(100%); }
+  to { filter: invert(0%); }
+}
+
+#content-about>.where>.card>img {
+  cursor: pointer;
+  width: 96px;
+  /* animation-name: invertFrom100; */
+  animation-duration: 350ms;
+  /* animation-delay: 100ms; */
+  animation-fill-mode: forwards;
+}
+
+#content-about>.where>.card:hover>img {
+  /* animation-name: invertTo100; */
+  animation-duration: 350ms;
+  /* animation-delay: 100ms; */
+  animation-fill-mode: forwards;
+}

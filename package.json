@@ -4,11 +4,17 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "pnpm build:blog-2017",
+    "build": "pnpm build:blog-2017 && pnpm build:blog-2018",
     "build:blog-2017": "NODE_ENV=production nx build blog-2017 --prod",
+    "build:blog-2018": "NODE_ENV=production nx build blog-2018 --prod",
     "test": "nx test"
   },
   "private": true,
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "0.13.7",
+    "tslib": "^2.0.0"
+  },
   "devDependencies": {
     "@nrwl/cli": "12.9.0",
     "@nrwl/cypress": "12.9.0",
@@ -19,16 +25,21 @@
     "@nrwl/web": "^12.9.0",
     "@nrwl/workspace": "12.9.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.0-rc.2",
+    "@types/animejs": "2",
     "@types/jest": "26.0.24",
+    "@types/jquery": "^3.5.6",
     "@types/node": "14.14.33",
     "@typescript-eslint/eslint-plugin": "~4.28.3",
     "@typescript-eslint/parser": "~4.28.3",
+    "animejs": "2.2.0",
+    "axios": "^0.21.4",
     "copy-webpack-plugin": "^9.0.1",
     "cypress": "^8.3.0",
     "eslint": "7.22.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "27.0.3",
+    "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.1",
     "react-refresh": "^0.10.0",
@@ -41,10 +52,5 @@
     "webpack-merge": "^5.8.0",
     "webpack-node-externals": "^3.0.0",
     "webpack-sources": "^3.0.2"
-  },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "regenerator-runtime": "0.13.7",
-    "tslib": "^2.0.0"
   }
 }

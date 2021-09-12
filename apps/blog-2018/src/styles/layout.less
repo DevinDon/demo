@@ -1,0 +1,102 @@
+body {
+  transition: var(--transition);
+}
+
+html {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: unset;
+}
+
+/** body 样式及继承. */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Consolas', '微软雅黑 Light', '微软雅黑', '黑体', sans-serif;
+  padding: 0;
+  margin: 0;
+  min-width: 960px;
+  width: 80vw;
+  max-width: 1280px;
+  min-height: 100vh;
+  color: var(--color-dark);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/** 背景画布. */
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/** 对话框区域. */
+#dialog-area {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+#dialog-area.full {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3636367f;
+}
+
+/** Header 顶栏. */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header>h1 {
+  opacity: 0;
+}
+
+/** 顶部座右铭. */
+#header-motto {
+  text-align: center;
+  flex-grow: 1;
+  font-style: italic;
+  font-size: small;
+}
+
+/** 顶部导航栏. */
+header>nav {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/** 主体内容. */
+section.content {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+}
+
+/** Footer 页脚. */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 2rem;
+}

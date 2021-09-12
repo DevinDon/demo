@@ -1,14 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Blog2018</title>
-    <base href="/" />
+<html lang="zh-Hans">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  </head>
-  <body>
-    <demo-root></demo-root>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>窗台</title>
+</head>
+
+<body>
+
+  <span id="notexist" style="display: none;"></span>
+  <canvas id="background">
+    <p>您的浏览器不支持 Canvas 画布, 请考虑使用 Chrome 最新版.</p>
+  </canvas>
+  <div id="dialog-area"></div>
+  <div id="toolbox" class="show">
+    <div class="button box">回到顶部</div>
+    <div class="button box">换一换</div>
+    <div class="button box">前往底部</div>
+  </div>
+
+  <header>
+    <h1 id="page-title" class="title">窗台</h1>
+    <p id="header-motto"></p>
+    <nav>
+      <a id="link-home" class="button" data-router="home">首页</a>
+      <a id="link-article" class="button" data-router="article">文字</a>
+      <a id="link-image" class="button" data-router="image">时刻</a>
+      <a id="link-song" class="button" data-router="song">声音</a>
+      <a id="link-about" class="button" data-router="about">关于</a>
+    </nav>
+  </header>
+
+  <section id="content-home" class="content">
+    <p style="font-size: 3rem; font-weight: bold;">大道虽简，知易行难。</p>
+    <article id="article-home">
+      <p>瀑布的水逆流而上</p>
+      <p>蒲公英种子从远处飘回 聚成伞的模样</p>
+      <p>太阳从西边升起 落向东方</p>
+      <p>子弹退回枪膛</p>
+      <p>运动员回到起跑线上</p>
+      <p>我交回录取通知书 忘了十年寒窗</p>
+      <p>厨房里飘来饭菜的香</p>
+      <p>你把我的卷子签好名字</p>
+      <p>关掉电视 帮我把书包背上</p>
+      <p>你还在我身旁</p>
+      <br>
+      <h3 class="author"><em>你还在我身旁</em> 戴畅</h3>
+    </article>
+  </section>
+
+  <section id="content-article" class="content">
+    <div class="loading init">
+      <h2>正在加载文字, 请稍后...</h2>
+    </div>
+  </section>
+
+  <section id="content-image" class="content">
+    <div class="loading init">
+      <h2>正在加载时刻, 请稍后...</h2>
+    </div>
+  </section>
+
+  <section id="content-song" class="content">
+    <div class="loading init">
+      <h2>正在加载歌曲列表, 请稍后...</h2>
+    </div>
+  </section>
+
+  <section id="content-about" class="content">
+    <div class="text">
+      <h2>想找到我?</h2>
+      <p>我会出没在这些地方...</p>
+    </div>
+    <div class="where">
+      <div class="card">
+        <img src="./assets/image/icon-github.png" alt="GitHub">
+        <h3><a href="https://github.com/DevinDon" target="_blank">GitHub</a></h3>
+      </div>
+      <div class="card">
+        <img src="./assets/image/icon-mail.png" alt="Mail">
+        <h3><a href="mailto:i.inf@outlook.com" target="_blank">Outlook</a></h3>
+      </div>
+      <div class="card">
+        <img src="./assets/image/icon-google.png" alt="Google+">
+        <h3><a href="https://plus.google.com/102334925408504296266" target="_blank">Google+</a></h3>
+      </div>
+      <div class="card">
+        <img src="./assets/image/icon-website.png" alt="Blog">
+        <h3><a href="https://blog.don.red" target="_blank">Blog</a></h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      <b>版权所有 ©2018+ <a href="https://github.com/DevinDon">夜寒苏</a></b>
+    </p>
+  </footer>
+
+</body>
+
+<script src="https://y.gtimg.cn/music/h5/player/player.js?max_age=2592000"></script>
+
 </html>

@@ -6,7 +6,7 @@
 
 [GitHub: DevinDon/blog-2017](https://github.com/DevinDon/blog-2017)
 
-## THE MIT LICENSE
+## [THE MIT LICENSE](https://raw.githubusercontent.com/DevinDon/license/master/THE%20MIT%20LICENSE)
 
 Copyright 2018+ Devin Don
 

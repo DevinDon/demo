@@ -1,0 +1,85 @@
+#content-song {
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+#content-song>.player {
+  cursor: auto;
+  background: -webkit-linear-gradient(left, #f5f5f5bf, #f5f5f53f);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#content-song>.player>.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#content-song>.player>.info>.text>p.album {
+  font-size: small;
+  font-weight: bold;
+}
+
+#content-song>.player>.info>img.album {
+  border-radius: 100rem;
+  width: 40%;
+}
+
+#content-song>.player>.controller {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#content-song>.player>.controller>button::after {
+  font-size: x-large;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+#content-song>.player>.controller>.previous::after {
+  content: '|<';
+}
+
+#content-song>.player>.controller>.toggle.play::after {
+  content: '||';
+}
+
+#content-song>.player>.controller>.toggle.pause::after {
+  content: '▶';
+}
+
+#content-song>.player>.controller>.next::after {
+  content: '>|';
+}
+
+#content-song>table {
+  cursor: auto;
+}
+
+#content-song>table tr {
+  margin: 0.5rem 0;
+  transition: var(--transition);
+}
+
+#content-song>table>tbody tr:hover {
+  background-color: #d5d5d5;
+}
+
+#content-song>table>thead {
+  font-weight: bold;
+  font-size: large;
+  word-wrap: none;
+  word-break: keep-all;
+}
+
+#content-song>table>tbody .control {
+  cursor: pointer;
+}
