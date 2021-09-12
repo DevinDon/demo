@@ -1,12 +1,10 @@
-# Demo 项目合集
+# 田某某的小窝
 
-以前做的所有展示类项目的合集，整合以方便云效自动化构建。
+大一时候做的第一个完整的网站，帮朋友做的期末作业（笑）。
 
-## 项目列表
+## 原项目地址
 
-### 1 田某某的小窝
-
-[田某某的小窝 GitHub: DevinDon/blog-2017](https://github.com/DevinDon/blog-2017)
+[GitHub: DevinDon/blog-2017](https://github.com/DevinDon/blog-2017)
 
 ## THE MIT LICENSE
 
