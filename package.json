@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "pnpm build:blog-2017 && pnpm build:blog-2018 && pnpm build:blog-over",
+    "build": "NODE_ENV=production nx run-many --target=build --parallel=true --all=true --maxParallel=4 --prod",
     "build:blog-2017": "NODE_ENV=production nx build blog-2017 --prod",
     "build:blog-2018": "NODE_ENV=production nx build blog-2018 --prod",
     "build:blog-over": "NODE_ENV=production nx build blog-over --prod",

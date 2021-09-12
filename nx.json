@@ -47,6 +47,9 @@
     "blog-over-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-over"]
+    },
+    "index": {
+      "tags": []
     }
   }
 }

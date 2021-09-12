@@ -361,12 +361,96 @@
           }
         }
       }
+    },
+    "index": {
+      "projectType": "application",
+      "root": "apps/index",
+      "sourceRoot": "apps/index/src",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/index",
+            "index": "apps/index/src/index.html",
+            "main": "apps/index/src/main.ts",
+            "polyfills": "apps/index/src/polyfills.ts",
+            "tsConfig": "apps/index/tsconfig.app.json",
+            "assets": [
+              "apps/index/src/favicon.ico",
+              "apps/index/src/assets"
+            ],
+            "styles": [
+              "apps/index/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/index/src/environments/environment.ts",
+                  "with": "apps/index/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "index:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "index:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "apps/index/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/index"
+          ],
+          "options": {
+            "jestConfig": "apps/index/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
     "defaultCollection": "@nrwl/web"
   },
-  "defaultProject": "blog-2018",
+  "defaultProject": "index",
   "generators": {
     "@nrwl/web:application": {
       "style": "less",
