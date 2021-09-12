@@ -4,18 +4,37 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "pnpm build:blog-2017 && pnpm build:blog-2018",
+    "build": "pnpm build:blog-2017 && pnpm build:blog-2018 && pnpm build:blog-over",
     "build:blog-2017": "NODE_ENV=production nx build blog-2017 --prod",
     "build:blog-2018": "NODE_ENV=production nx build blog-2018 --prod",
-    "test": "nx test"
+    "build:blog-over": "NODE_ENV=production nx build blog-over --prod",
+    "test": "nx test",
+    "postinstall": "ngcc --properties es2015 browser module main"
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^12.2.0",
+    "@angular/common": "^12.2.0",
+    "@angular/compiler": "^12.2.0",
+    "@angular/core": "^12.2.0",
+    "@angular/forms": "^12.2.0",
+    "@angular/platform-browser": "^12.2.0",
+    "@angular/platform-browser-dynamic": "^12.2.0",
+    "@angular/router": "^12.2.0",
     "core-js": "^3.6.5",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.0.0"
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.0",
+    "@angular-eslint/eslint-plugin": "~12.3.0",
+    "@angular-eslint/eslint-plugin-template": "~12.3.0",
+    "@angular-eslint/template-parser": "~12.3.0",
+    "@angular/compiler-cli": "^12.2.0",
+    "@angular/language-service": "^12.2.0",
+    "@nrwl/angular": "^12.9.0",
     "@nrwl/cli": "12.9.0",
     "@nrwl/cypress": "12.9.0",
     "@nrwl/eslint-plugin-nx": "12.9.0",
@@ -39,6 +58,7 @@
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
     "jest": "27.0.3",
+    "jest-preset-angular": "9.0.7",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.1",

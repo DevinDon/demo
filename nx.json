@@ -40,6 +40,13 @@
     "blog-2018-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-2018"]
+    },
+    "blog-over": {
+      "tags": []
+    },
+    "blog-over-e2e": {
+      "tags": [],
+      "implicitDependencies": ["blog-over"]
     }
   }
 }
