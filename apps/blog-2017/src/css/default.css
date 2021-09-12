@@ -1,0 +1,412 @@
+@charset "utf-8";
+
+/* CSS Document */
+/*
+#3498DB
+Light Blue
+#2980B9
+Dark Blue
+#0070c0
+Windows Blue
+*/
+
+body, td, th
+{
+    font-family: "微软雅黑 Light";
+    color: #000000;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:link
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: #000000;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: '微软雅黑 Light';
+}
+
+#page
+{
+    position: static;
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #ECF0F1;
+}
+
+#logo
+{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background: url(../image/Logo.png);
+}
+
+#nav
+{
+    float: right;
+    vertical-align: bottom;
+    position: relative;
+    width: 600px;
+    height: 40px;
+    margin: 0 auto;
+    top: 60px;
+    font-size: large;
+    color: #ECF0F1;
+}
+
+#nav li
+{
+    font-family: "微软雅黑";
+    list-style: none;
+    float: right;
+    background-color: #3498DB;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+#nav li a
+{
+    display: block;
+    padding: 12px auto;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    transition: 0.3s ease-in-out;
+    color: #ECF0F1;
+}
+
+#nav li a:hover
+{
+    background-color: #0070c0;
+}
+
+#nav li a.pre
+{
+    background-color: #AADDFF;
+    color: #0070c0;
+    transition: 0.3s ease-in-out;
+}
+
+#nav li a.pre:hover
+{
+    background-color: #3498DB;
+    color: #ECF0F1;
+}
+
+.pic_show
+{
+    position: absolute;
+    float: right;
+    top: 120px;
+    height: 600px;
+    width: 1000px;
+    background: url( ../image/picshow_1000x600.png);
+}
+
+.pic_show_old
+{
+    position: absolute;
+    float: right;
+    top: 120px;
+    height: 300px;
+    width: 1000px;
+    background: url( ../image/picshow_1000x600.png);
+}
+
+.head_in_pic
+{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    width: 200px;
+    height: 200px;
+    background: url(../image/head.png)
+}
+
+.text_in_pic
+{
+    color: #0070c0;
+    background-color: rgba(255,255,255,0.75);
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    float: right;
+    top: 20%;
+    width: 40%;
+    transition: 1s ease-in-out;
+}
+
+.text_in_pic_about
+{
+    color: #0070c0;
+    background-color: rgba(255,255,255,0.75);
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    float: right;
+    top: 25%;
+    width: 25%;
+    transition: 1s ease-in-out;
+}
+
+.text_in_pic:hover, .text_in_pic_about:hover
+{
+    opacity: 1;
+}
+
+.art
+{
+    position: absolute;
+    width: 1000px;
+    top: 430px;
+}
+
+.art_show
+{
+    position: absolute;
+    text-align: left;
+    width: 600px;
+    background-color: #E8E8E8;
+}
+
+.art_footer
+{
+    position: relative;
+    left: 10%;
+    font-size: small;
+    color: darkgray;
+}
+
+.art_footer a
+{
+    color: darkgray;
+}
+
+h1.art_title
+{
+    position: relative;
+    left: 10%;
+    color: #7F8C8D;
+}
+
+h1.art_title a
+{
+    color: #7F8C8D;
+}
+
+h2.art_subtitle
+{
+    position: relative;
+    left: 10%;
+    color: #95A5A6;
+}
+
+.art_info
+{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    text-indent: 2em;
+}
+
+.right_info
+{
+    position: relative;
+    text-align: left;
+    width: 300px;
+    float: right;
+}
+
+.right_info_fixed
+{
+    position: fixed;
+    text-align: left;
+    right: calc((100% - 1000px) / 2);
+    width: 300px;
+    float: right;
+}
+
+.footer
+{
+    position: absolute;
+    bottom: 0px;
+    width: 1000px;
+    text-align: center;
+    font-size: small;
+    color: darkgray;
+}
+
+.hr_style
+{
+    color: #BDC3C7;
+    width: 80%;
+}
+
+/*.text_colorful
+{
+  position: absolute;
+  bottom: 50px;
+  width: auto;
+  transition: 0.25s ease-in-out;
+}
+
+.text_colorful li
+{
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  float: left;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "微软雅黑";
+  font-weight: 100;
+}*/
+/*Article Page Sheetstyle*/
+.article_nav
+{
+    position: absolute;
+    top: 120px;
+    width: 1000px;
+    transition: 0.3s ease-in-out;
+}
+
+.article_nav li
+{
+    font-family: "微软雅黑";
+    list-style: none;
+    float: left;
+    background-color: #3498DB;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.article_nav li a
+{
+    display: block;
+    padding: 12px auto;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    transition: 0.3s ease-in-out;
+    color: #ECF0F1;
+}
+
+.article_nav li a:hover
+{
+    background-color: #0070c0;
+}
+
+.article_nav li a.pre
+{
+    background-color: #AADDFF;
+    color: #0070c0;
+    width: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    transition: 0.3s ease-in-out;
+}
+
+.article_nav li a.pre:hover
+{
+    background-color: #3498DB;
+    color: #ECF0F1;
+}
+
+.article_saying
+{
+    width: 1000px;
+    position: absolute;
+    text-align: right;
+    bottom: 0px;
+    color: darkgray;
+    z-index: -1;
+}
+
+.article_art
+{
+    position: absolute;
+    top: 200px;
+    width: 1000px;
+}
+
+.article_art_show
+{
+    background-color: #E8E8E8;
+    width: 600px;
+}
+
+.art_push, .contact
+{
+    position: relative;
+    left: 20px;
+}
+
+.art_push a
+{
+    color: gray;
+}
+
+.fontsize_plus
+{
+    font-size: large;
+    font-weight: bold;
+}
+
+/* About */
+.about_main
+{
+    position: absolute;
+    top: 80px;
+}
+
+.footer_about
+{
+    position: absolute;
+    top: 950px;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    font-size: small;
+    color: darkgray;
+}
+
+/* Index */
+.art_index
+{
+    position: absolute;
+    width: 1000px;
+    top: 730px;
+}
+
+.footer_index
+{
+    position: absolute;
+    top: 270px;
+    width: 1000px;
+    height: 50px;
+    text-align: center;
+    font-size: small;
+    color: darkgray;
+}
+
+.art_info_index
+{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
