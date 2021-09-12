@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build": "nx build",
+    "build": "pnpm build:blog-2017",
+    "build:blog-2017": "NODE_ENV=production nx build blog-2017 --prod",
     "test": "nx test"
   },
   "private": true,
