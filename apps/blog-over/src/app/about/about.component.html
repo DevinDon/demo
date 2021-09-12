@@ -1,0 +1,46 @@
+<div class="window">
+
+  <h1 class="title">关于我</h1>
+
+  <p class="motto">{{ mottos[0] }}</p>
+
+  <div class="link">
+    <a mat-icon-button (click)="openDialog('github')">
+      <mat-icon class="remixicon-github-line"></mat-icon>
+    </a>
+    <a mat-icon-button (click)="openDialog('email')">
+      <mat-icon class="remixicon-at-line"></mat-icon>
+    </a>
+    <a mat-icon-button (click)="openDialog('linkedin')">
+      <mat-icon class="remixicon-linkedin-line"></mat-icon>
+    </a>
+    <a mat-icon-button (click)="openDialog('wechat')">
+      <mat-icon class="remixicon-wechat-line"></mat-icon>
+    </a>
+    <a mat-icon-button (click)="openDialog('twitter')">
+      <mat-icon class="remixicon-twitter-line"></mat-icon>
+    </a>
+  </div>
+
+  <button mat-icon-button class="down" (click)="nextPage()">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
+
+</div>
+
+<h2 style="text-align: center;">夜寒苏的旅途</h2>
+<ul>
+  <li *ngFor="let event of events">
+    <div class="line"></div>
+    <span class="date">{{ event.date | date:"yyyy-MM-dd" }}</span>
+    <h4 class="title">{{ event.title }}</h4>
+    <p class="content">{{ event.content }}</p>
+  </li>
+</ul>
+
+<div class="last">
+  <p>愿你看遍世态炎凉，却仍愿善良如初。</p>
+</div>
+
+<demo-wave [show]="true">
+</demo-wave>

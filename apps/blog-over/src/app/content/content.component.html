@@ -1,0 +1,42 @@
+<div class="card" *ngFor="let content of contents; index as i; trackBy: trackByFn">
+
+  <div class="category">article</div>
+
+  <section class="header">
+    <img class="picture" [src]="'assets/head/' + (i % 3 + 1) + '.png'" [alt]="content.author">
+    <section class="text">
+      <h3 class="title">{{ content.title }}</h3>
+      <h4 class="subtitle">
+        <span class="author">{{ content.author }}</span>
+        <span class="split">|</span>
+        <span class="date">{{ content.date | date:"yy-MM-dd" }}</span>
+      </h4>
+    </section>
+  </section>
+
+  <section class="content" (click)="openDetail(content)">
+    <img class="image" [src]="content.image || 'assets/background/' + (i % 5 + 1) + '.png'" [alt]="content.title">
+    <p class="summary">{{ content.summary }}</p>
+  </section>
+
+  <section class="footer">
+    <div class="action">
+      <button mat-button (click)="like(content)">
+        <mat-icon>thumb_up</mat-icon>
+        <span class="split"></span>
+        <span>{{ content.liked }}</span>
+      </button>
+      <button mat-button>
+        <mat-icon>comment</mat-icon>
+        <span class="split"></span>
+        <span>5</span>
+      </button>
+      <button mat-button (click)="share(content)">
+        <mat-icon>share</mat-icon>
+        <span class="split"></span>
+        <span>{{ content.shared }}</span>
+      </button>
+    </div>
+  </section>
+
+</div>

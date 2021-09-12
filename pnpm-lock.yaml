@@ -6,15 +6,18 @@ specifiers:
   '@angular-eslint/eslint-plugin-template': ~12.3.0
   '@angular-eslint/template-parser': ~12.3.0
   '@angular/animations': ^12.2.0
+  '@angular/cdk': ^12.2.5
   '@angular/common': ^12.2.0
   '@angular/compiler': ^12.2.0
   '@angular/compiler-cli': ^12.2.0
   '@angular/core': ^12.2.0
   '@angular/forms': ^12.2.0
   '@angular/language-service': ^12.2.0
+  '@angular/material': ^12.2.5
   '@angular/platform-browser': ^12.2.0
   '@angular/platform-browser-dynamic': ^12.2.0
   '@angular/router': ^12.2.0
+  '@iinfinity/theme': ^0.2.4
   '@nrwl/angular': ^12.9.0
   '@nrwl/cli': 12.9.0
   '@nrwl/cypress': 12.9.0
@@ -26,8 +29,10 @@ specifiers:
   '@nrwl/workspace': 12.9.0
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.0-rc.2
   '@types/animejs': '2'
+  '@types/highlight.js': '9'
   '@types/jest': 26.0.24
   '@types/jquery': ^3.5.6
+  '@types/marked': ^3.0.0
   '@types/node': 14.14.33
   '@typescript-eslint/eslint-plugin': ~4.28.3
   '@typescript-eslint/parser': ~4.28.3
@@ -39,13 +44,17 @@ specifiers:
   eslint: 7.22.0
   eslint-config-prettier: 8.1.0
   eslint-plugin-cypress: ^2.10.3
+  hammerjs: ^2.0.8
+  highlight.js: 9.15.8
   jest: 27.0.3
   jest-preset-angular: 9.0.7
   jquery: ^3.6.0
+  marked: ^3.0.3
   mini-css-extract-plugin: ^2.1.0
   prettier: ^2.3.1
   react-refresh: ^0.10.0
   regenerator-runtime: 0.13.7
+  remixicon: ^2.5.0
   rxjs: ~6.6.0
   source-map-loader: ^3.0.0
   terser-webpack-plugin: ^5.1.1
@@ -79,8 +88,11 @@ devDependencies:
   '@angular-eslint/eslint-plugin': 12.3.1_957cbef23e9d3af1d9146cb834e58351
   '@angular-eslint/eslint-plugin-template': 12.3.1_957cbef23e9d3af1d9146cb834e58351
   '@angular-eslint/template-parser': 12.3.1_957cbef23e9d3af1d9146cb834e58351
+  '@angular/cdk': 12.2.5_a5a438fe4cbb8d9ad8d7a69ba2d01492
   '@angular/compiler-cli': 12.2.5_71ca52b13e8b21e4b4727a907b45059d
   '@angular/language-service': 12.2.5
+  '@angular/material': 12.2.5_fb0072d5dd9d79ed48b53690870a66ac
+  '@iinfinity/theme': 0.2.4
   '@nrwl/angular': 12.9.0_00e13799114a2706d867ead993dad8ed
   '@nrwl/cli': 12.9.0
   '@nrwl/cypress': 12.9.0_b0366f1327b94e9e5924fab8f9d7a047
@@ -92,8 +104,10 @@ devDependencies:
   '@nrwl/workspace': 12.9.0_prettier@2.4.0
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.0-rc.2_4719edabbb107d7c6fc4e7cd4a043623
   '@types/animejs': 2.0.2
+  '@types/highlight.js': 9.12.3
   '@types/jest': 26.0.24
   '@types/jquery': 3.5.6
+  '@types/marked': 3.0.0
   '@types/node': 14.14.33
   '@typescript-eslint/eslint-plugin': 4.28.5_aef98d5017e29b9d77e8f1f0bddfcabc
   '@typescript-eslint/parser': 4.28.5_eslint@7.22.0+typescript@4.3.5
@@ -104,12 +118,16 @@ devDependencies:
   eslint: 7.22.0
   eslint-config-prettier: 8.1.0_eslint@7.22.0
   eslint-plugin-cypress: 2.11.3_eslint@7.22.0
+  hammerjs: 2.0.8
+  highlight.js: 9.15.8
   jest: 27.0.3
   jest-preset-angular: 9.0.7_59155b5c5616346cd9d772716b992dd2
   jquery: 3.6.0
+  marked: 3.0.3
   mini-css-extract-plugin: 2.3.0_webpack@5.52.1
   prettier: 2.4.0
   react-refresh: 0.10.0
+  remixicon: 2.5.0
   source-map-loader: 3.0.0_webpack@5.52.1
   terser-webpack-plugin: 5.2.4_webpack@5.52.1
   ts-jest: 27.0.3_jest@27.0.3+typescript@4.3.5
@@ -357,6 +375,21 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@angular/cdk/12.2.5_a5a438fe4cbb8d9ad8d7a69ba2d01492:
+    resolution: {integrity: sha512-sB+chDISuQ2orEgWumVkEaaQ2Mkf5SDBlNGMwgwUV5a2eSp0wDprZS+3+H8lHc533z2Y4GOh6Apklku8XQT5qw==}
+    peerDependencies:
+      '@angular/common': ^12.0.0 || ^13.0.0-0
+      '@angular/core': ^12.0.0 || ^13.0.0-0
+      rxjs: ^6.5.3 || ^7.0.0
+    dependencies:
+      '@angular/common': 12.2.5_@angular+core@12.2.5+rxjs@6.6.7
+      '@angular/core': 12.2.5_rxjs@6.6.7+zone.js@0.11.4
+      rxjs: 6.6.7
+      tslib: 2.3.1
+    optionalDependencies:
+      parse5: 5.1.1
+    dev: true
+
   /@angular/common/12.2.5_@angular+core@12.2.5+rxjs@6.6.7:
     resolution: {integrity: sha512-iwyaGPx7ILTJn91ed7VtYkvVRRezaZ0EE2V5DzVXwCsBQyzCrBYz/Uo2udVDsJ2FXXhpxa2VjnkW55Uxl9wM0g==}
     engines: {node: ^12.14.1 || >=14.0.0}
@@ -435,6 +468,25 @@ packages:
   /@angular/language-service/12.2.5:
     resolution: {integrity: sha512-UypVxx1/ArXvYiSqzpIc/MUv+NkyQzMgZ96z2rG2ALqEVe+/m0AZEtvT/pD94Z0wlZDeMVaToD3OhRkQ4om2aA==}
     engines: {node: ^12.14.1 || >=14.0.0}
+    dev: true
+
+  /@angular/material/12.2.5_fb0072d5dd9d79ed48b53690870a66ac:
+    resolution: {integrity: sha512-oQMNxxDtcR3evZaOdTyzCWRCHcM6V4AGJx4pbyzEpYPo9j4iKFGtTPLGEkWtsWNFZp/g7E7gx0sU3ssjRDt7Dw==}
+    peerDependencies:
+      '@angular/animations': ^12.0.0 || ^13.0.0-0
+      '@angular/cdk': 12.2.5
+      '@angular/common': ^12.0.0 || ^13.0.0-0
+      '@angular/core': ^12.0.0 || ^13.0.0-0
+      '@angular/forms': ^12.0.0 || ^13.0.0-0
+      rxjs: ^6.5.3 || ^7.0.0
+    dependencies:
+      '@angular/animations': 12.2.5_@angular+core@12.2.5
+      '@angular/cdk': 12.2.5_a5a438fe4cbb8d9ad8d7a69ba2d01492
+      '@angular/common': 12.2.5_@angular+core@12.2.5+rxjs@6.6.7
+      '@angular/core': 12.2.5_rxjs@6.6.7+zone.js@0.11.4
+      '@angular/forms': 12.2.5_415910e21aa908f435e87fb8acb59956
+      rxjs: 6.6.7
+      tslib: 2.3.1
     dev: true
 
   /@angular/platform-browser-dynamic/12.2.5_f2303d20151cf4b3390188f3a3027acd:
@@ -2726,6 +2778,10 @@ packages:
     resolution: {integrity: sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw==}
     dev: true
 
+  /@iinfinity/theme/0.2.4:
+    resolution: {integrity: sha512-fzWV/5QqEBBx1g/sAC2MhEUAyBo3ZUwZ2Lay5IBHfjpiF/2ACBh7S3TqzTlnutrIAKSpZKAPyVz/ILIZfdRpFg==}
+    dev: true
+
   /@istanbuljs/load-nyc-config/1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
     engines: {node: '>=8'}
@@ -3772,6 +3828,10 @@ packages:
       '@types/node': 14.14.33
     dev: true
 
+  /@types/highlight.js/9.12.3:
+    resolution: {integrity: sha512-pGF/zvYOACZ/gLGWdQH8zSwteQS1epp68yRcVLJMgUck/MjEn/FBYmPub9pXT8C1e4a8YZfHo1CKyV8q1vKUnQ==}
+    dev: true
+
   /@types/http-proxy/1.17.7:
     resolution: {integrity: sha512-9hdj6iXH64tHSLTY+Vt2eYOGzSogC+JQ2H7bdPWkuh7KXP5qLllWx++t+K9Wk556c3dkDdPws/SpMRi0sdCT1w==}
     dependencies:
@@ -3813,6 +3873,10 @@ packages:
 
   /@types/json5/0.0.29:
     resolution: {integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=}
+    dev: true
+
+  /@types/marked/3.0.0:
+    resolution: {integrity: sha512-vof90OIWT+Tzq3MBRXgV9fsH8PC3WZ4OQg9Qa04vOtP0TcyiNfl7BTonYCmTapHZ5lRZh6ihUYkAy7St1hmk/A==}
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -7590,6 +7654,18 @@ packages:
         optional: true
     dev: true
 
+  /follow-redirects/1.14.3_debug@4.3.2:
+    resolution: {integrity: sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.2_supports-color@6.1.0
+    dev: true
+
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
     engines: {node: '>=0.10.0'}
@@ -7946,6 +8022,11 @@ packages:
       duplexer: 0.1.2
     dev: true
 
+  /hammerjs/2.0.8:
+    resolution: {integrity: sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=}
+    engines: {node: '>=0.8.0'}
+    dev: true
+
   /handle-thing/2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
     dev: true
@@ -8067,6 +8148,11 @@ packages:
   /he/1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+    dev: true
+
+  /highlight.js/9.15.8:
+    resolution: {integrity: sha512-RrapkKQWwE+wKdF73VsOa2RQdIoO3mxwJ4P8mhbI6KYJUraUHRKM5w5zQQKXNk0xNL4UVRdulV9SBJcmzJNzVA==}
+    deprecated: Version no longer supported. Upgrade to @latest
     dev: true
 
   /hmac-drbg/1.0.1:
@@ -8212,7 +8298,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.3
+      follow-redirects: 1.14.3_debug@4.3.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -10119,6 +10205,12 @@ packages:
       object-visit: 1.0.1
     dev: true
 
+  /marked/3.0.3:
+    resolution: {integrity: sha512-4oIDhVSQ2s+xNCfek9OnZgCQR/WykGCom02JzIIvi4Pme+MIwPYqvGVW8CQWOXeoZu0TtVB6pTxIuoLm+dKqDA==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: true
+
   /md5.js/1.3.5:
     resolution: {integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==}
     dependencies:
@@ -11160,6 +11252,12 @@ packages:
   /parse5/4.0.0:
     resolution: {integrity: sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==}
     dev: true
+
+  /parse5/5.1.1:
+    resolution: {integrity: sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /parse5/6.0.1:
     resolution: {integrity: sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==}
@@ -12813,6 +12911,10 @@ packages:
     hasBin: true
     dependencies:
       jsesc: 0.5.0
+    dev: true
+
+  /remixicon/2.5.0:
+    resolution: {integrity: sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==}
     dev: true
 
   /remove-trailing-separator/1.1.0:

@@ -1,0 +1,30 @@
+img {
+  width: 100%;
+}
+
+article {
+  padding: 0 1rem 2rem 1rem;
+  > .subtitle {
+    font-size: small;
+    font-weight: normal;
+    color: gray;
+  }
+  > .content {
+    > p {
+      text-indent: 2rem;
+    }
+  }
+}
+
+.split {
+  margin: 0 0.5rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}

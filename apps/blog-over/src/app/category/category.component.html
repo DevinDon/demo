@@ -1,0 +1,9 @@
+<div class="panel">
+  <a class="card" *ngFor="let category of categories" [routerLink]="category.link">
+    <img class="image" [alt]="category.name" [src]="category.image">
+    <h3 class="name">{{ category.name }}</h3>
+  </a>
+</div>
+
+<demo-wave [show]="true">
+</demo-wave>

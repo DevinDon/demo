@@ -1,0 +1,64 @@
+.card {
+  margin-bottom: 1rem;
+  background-color: #fff;
+  box-shadow: 0px -2px 15px -8px rgba(0, 0, 0, 0.3), 0px 2px 15px -8px rgba(0, 0, 0, 0.3);
+  .split {
+    margin: 0 0.5rem;
+  }
+  > .category {
+    padding-top: 0.5rem;
+    text-align: center;
+    font-size: small;
+    color: gray;
+    &::before,
+    &::after {
+      content: "-";
+      margin: 0 0.25rem;
+    }
+  }
+  > .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0;
+    > .picture {
+      margin: 0 1rem;
+      width: 3rem;
+    }
+    > .text {
+      > * {
+        margin: 0;
+      }
+      > .subtitle {
+        font-size: small;
+        font-weight: normal;
+        color: gray;
+      }
+    }
+  }
+  > .content {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    > .image {
+      width: 100%;
+    }
+    > .summary {
+      padding: 0.5rem;
+      margin: 0;
+      font-size: small;
+    }
+  }
+  > .footer {
+    padding: 0.5rem;
+    > .action {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      > button {
+        flex-basis: 10rem;
+        flex-grow: 1;
+      }
+    }
+  }
+}

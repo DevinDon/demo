@@ -1,0 +1,33 @@
+@import "~@iinfinity/theme/theme/variable.scss";
+
+.wave {
+  background-color: #ffffff00;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  &::before {
+    content: "";
+    background-color: $color-blue-light;
+    position: absolute;
+    left: 50%;
+    bottom: -300rem;
+    border-radius: 47%;
+    animation-duration: 20s;
+    min-width: 300rem;
+    min-height: 300rem;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .wave {
+    width: 25rem;
+  }
+}

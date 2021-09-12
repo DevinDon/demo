@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@iinfinity/theme/index.scss";
+@import "~remixicon/fonts/remixicon.css";
+
+body {
+  min-height: 100vh;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate(-50%, -2%) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-50%, 0%) rotateZ(360deg);
+  }
+}

@@ -1,0 +1,15 @@
+<div class="window">
+
+  <h1 class="title">{{ app.title }}</h1>
+
+  <p class="motto" [@motto]="state" (@motto.done)="content = motto.content; state = 'done'">{{ content }}</p>
+
+  <a mat-button class="action" [routerLink]="['/content']">
+    <mat-icon>fingerprint</mat-icon>
+    <span class="content">进入博客</span>
+  </a>
+
+</div>
+
+<demo-wave [show]="true">
+</demo-wave>
