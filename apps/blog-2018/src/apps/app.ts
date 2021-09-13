@@ -71,18 +71,12 @@ export class APP {
     this.dialog = new Dialog();
     this.starrysky = new StarrySky('background');
     this.player = new Player(this.dialog);
-    if (location.hostname === 'localhost') { // localhost
-      this.prefix = '';
-      this.api = new API(this.dialog);
-    } else if (location.hostname === 'demo.don.red') { // demo.don.red
-      this.prefix = 'blog';
-      this.api = new API(this.dialog, 'api/v1');
-    } else if (location.hostname === 'devindon.github.io') { // GitHub page
+    if (location.hostname === 'devindon.github.io') { // GitHub page
       this.prefix = 'blog-2018';
-      this.api = new API(this.dialog, 'https://demo.don.red/blog/api/v1');
+      this.api = new API(this.dialog, 'https://blog-2018.devin.red/api');
     } else {
       this.prefix = '';
-      this.api = new API(this.dialog);
+      this.api = new API(this.dialog, 'api');
     }
     this.content = {
       home: {
@@ -215,7 +209,10 @@ export class APP {
         message: '核心路由不支持本地访问.',
       };
     }
-    const url: string[] = location.pathname.split('/').filter(v => v).filter(v => v !== this.prefix);
+    const url: string[] = location.pathname
+      .split('/')
+      .filter(v => v)
+      .filter(v => v !== this.prefix);
     // 当前页面刷新, 或从站外链接进入, 重新导航至本页
     if (url.length) {
       const page: Title = url[0] as Title;

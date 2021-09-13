@@ -37,6 +37,9 @@
     "blog-2018": {
       "tags": []
     },
+    "blog-2018-api": {
+      "tags": []
+    },
     "blog-2018-e2e": {
       "tags": [],
       "implicitDependencies": ["blog-2018"]

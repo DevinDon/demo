@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-2017",
             "index": "apps/blog-2017/src/index.html",
@@ -24,9 +22,7 @@
               "apps/blog-2017/src/jquery",
               "apps/blog-2017/src/page"
             ],
-            "styles": [
-              "apps/blog-2017/src/styles.css"
-            ],
+            "styles": ["apps/blog-2017/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -67,20 +63,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2017/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/blog-2017/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-2017"
-          ],
+          "outputs": ["coverage/apps/blog-2017"],
           "options": {
             "jestConfig": "apps/blog-2017/jest.config.js",
             "passWithNoTests": true
@@ -107,13 +97,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2017-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/blog-2017-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -125,9 +111,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-2018",
             "index": "apps/blog-2018/src/index.html",
@@ -138,9 +122,7 @@
               "apps/blog-2018/src/favicon.ico",
               "apps/blog-2018/src/assets"
             ],
-            "styles": [
-              "apps/blog-2018/src/styles.less"
-            ],
+            "styles": ["apps/blog-2018/src/styles.less"],
             "scripts": []
           },
           "configurations": {
@@ -171,7 +153,8 @@
         "serve": {
           "executor": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "blog-2018:build"
+            "buildTarget": "blog-2018:build",
+            "proxyConfig": "apps/blog-2018/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -181,22 +164,67 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2018/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/blog-2018/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-2018"
-          ],
+          "outputs": ["coverage/apps/blog-2018"],
           "options": {
             "jestConfig": "apps/blog-2018/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "blog-2018-api": {
+      "root": "apps/blog-2018-api",
+      "sourceRoot": "apps/blog-2018-api/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/blog-2018-api",
+            "main": "apps/blog-2018-api/src/main.ts",
+            "tsConfig": "apps/blog-2018-api/tsconfig.app.json",
+            "assets": ["apps/blog-2018-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/blog-2018-api/src/environments/environment.ts",
+                  "with": "apps/blog-2018-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "blog-2018-api:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/blog-2018-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/blog-2018-api"],
+          "options": {
+            "jestConfig": "apps/blog-2018-api/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -222,13 +250,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2018-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/blog-2018-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -241,9 +265,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-over",
             "index": "apps/blog-over/src/index.html",
@@ -255,9 +277,7 @@
               "apps/blog-over/src/favicon.ico",
               "apps/blog-over/src/assets"
             ],
-            "styles": [
-              "apps/blog-over/src/styles.scss"
-            ],
+            "styles": ["apps/blog-over/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -322,9 +342,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-over"
-          ],
+          "outputs": ["coverage/apps/blog-over"],
           "options": {
             "jestConfig": "apps/blog-over/jest.config.js",
             "passWithNoTests": true
@@ -351,13 +369,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-over-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/blog-over-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -369,22 +383,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/index",
             "index": "apps/index/src/index.html",
             "main": "apps/index/src/main.ts",
             "polyfills": "apps/index/src/polyfills.ts",
             "tsConfig": "apps/index/tsconfig.app.json",
-            "assets": [
-              "apps/index/src/favicon.ico",
-              "apps/index/src/assets"
-            ],
-            "styles": [
-              "apps/index/src/styles.less"
-            ],
+            "assets": ["apps/index/src/favicon.ico", "apps/index/src/assets"],
+            "styles": ["apps/index/src/styles.less"],
             "scripts": []
           },
           "configurations": {
@@ -425,20 +432,14 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/index/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/index/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/index"
-          ],
+          "outputs": ["coverage/apps/index"],
           "options": {
             "jestConfig": "apps/index/jest.config.js",
             "passWithNoTests": true
