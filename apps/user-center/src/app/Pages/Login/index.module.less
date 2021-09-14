@@ -1,0 +1,43 @@
+@import "~antd/es/style/themes/default.less";
+
+.loginContainer {
+  background-color: rgb(240, 248, 250);
+  height: 100vh;
+  .login {
+    padding-top: 200px;
+    width: 368px;
+    margin: 0 auto;
+    :global {
+      .ant-tabs .ant-tabs-nav {
+        margin-bottom: 24px;
+        text-align: center;
+        &::before {
+          border-bottom: 0;
+        }
+        .ant-tabs-nav-list {
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .icon {
+    margin-left: 16px;
+    color: @text-color-secondary;
+    font-size: 24px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .other {
+    margin-top: 24px;
+    line-height: 22px;
+    .register {
+      float: right;
+    }
+  }
+}

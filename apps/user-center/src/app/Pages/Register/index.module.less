@@ -1,0 +1,40 @@
+@import '~antd/es/style/themes/default.less';
+
+.registerContainer {
+  background-color: rgb(240, 248, 250);
+  height: 100vh;
+  .register {
+    padding-top: 200px;
+    width: 368px;
+    margin: 0 auto;
+  }
+  .login {
+    float: right;
+  }
+}
+
+.success,
+.warning,
+.error {
+  transition: color 0.3s;
+}
+
+.success {
+  color: @success-color
+}
+
+.warning {
+  color: @warning-color
+}
+
+.error {
+  color: @error-color
+}
+
+.progress-pass > .progress{
+  :global {
+    .ant-progress-bg {
+      background-color: @warning-color;
+    }
+  }
+}
