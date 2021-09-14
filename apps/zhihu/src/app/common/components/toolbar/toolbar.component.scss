@@ -1,0 +1,29 @@
+:host {
+  display         : flex;
+  flex-direction  : row;
+  justify-content : space-between;
+  align-items     : center;
+  background-color: white;
+
+  .icon {
+    font-size: large;
+  }
+}
+
+.action {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-items    : center;
+  width          : 100%;
+  padding        : 0.5rem;
+}
+
+.search {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-items    : center;
+  width          : 100%;
+  padding        : 0.5rem 1rem;
+}

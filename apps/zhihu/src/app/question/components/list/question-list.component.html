@@ -1,0 +1,27 @@
+<app-toolbar class="toolbar" type="home"></app-toolbar>
+
+<div class="container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+  (scrolled)="loadMore()">
+
+  <ng-container *ngIf="questions === undefined">
+    <app-loading [style.height]="'100vh'">正在加载问题列表...</app-loading>
+  </ng-container>
+
+  <ng-container *ngIf="questions && questions.length === 0">
+    <p>暂无问题，快点击提问吧</p>
+  </ng-container>
+
+  <ng-container *ngIf="questions && questions.length > 0">
+    <app-question-card *ngFor="let question of questions; trackBy: trackByID" [question]="question"
+      [routerLink]="[ '/question', question.id ]"></app-question-card>
+  </ng-container>
+
+  <ng-container *ngIf="status.loading">
+    <app-loading size="mini" direction="row">加载中...</app-loading>
+  </ng-container>
+
+  <button mat-mini-fab class="publish" color="primary" [routerLink]="[ '/question/new' ]" matTooltip="点击发布提问">
+    <i class="ri-quill-pen-line"></i>
+  </button>
+
+</div>

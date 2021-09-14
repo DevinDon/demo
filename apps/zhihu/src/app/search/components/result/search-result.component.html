@@ -1,0 +1,33 @@
+<app-toolbar class="toolbar" type="search" (search)="search($event)" [value]="value"></app-toolbar>
+
+<div class="container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+  (scrolled)="loadMore()">
+
+  <h3 class="title">关于 {{ value }} 的搜索结果</h3>
+
+  <div class="tags">
+    <div class="tag" mat-ripple *ngFor="let tag of tags">{{ tag }}</div>
+  </div>
+
+  <ng-container *ngIf="results === undefined">
+    <app-loading [style.height]="'100vh'">正在努力搜索...</app-loading>
+  </ng-container>
+
+  <ng-container *ngIf="results && results.length === 0">
+    <p>没有找到相关问答，换个关键字试试看~</p>
+  </ng-container>
+
+  <ng-container *ngIf="results && results.length > 0">
+    <app-search-result-card *ngFor="let result of results; trackBy: trackByID" [result]="result"
+      [routerLink]="[ '/answer', result.answer.id ]"></app-search-result-card>
+  </ng-container>
+
+  <ng-container *ngIf="status.loading">
+    <app-loading size="mini" direction="row">加载中...</app-loading>
+  </ng-container>
+
+  <button mat-mini-fab class="publish" color="primary" [routerLink]="[ '/question/new' ]" matTooltip="点击发布提问">
+    <i class="ri-quill-pen-line"></i>
+  </button>
+
+</div>

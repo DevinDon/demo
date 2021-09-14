@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="actions">
+    <button mat-button [routerLink]="[ '/question' ]">
+      <i class="icon ri-close-line"></i>
+      <span class="text">关闭</span>
+    </button>
+    <button mat-button color="primary" [disabled]="isInvalidTitle() || status.publishing !== 'init'"
+      (click)="publish()">
+      <ng-container *ngIf="status.publishing === 'init'">
+        <i class="icon ri-send-plane-line"></i>
+        <span class="text">发布问题</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'loading'">
+        <i class="icon ri-loader-5-line rotate"></i>
+        <span class="text">正在发布</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'succeed'">
+        <i class="icon ri-check-line"></i>
+        <span class="text">发布成功</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'failed'">
+        <i class="icon ri-close-line"></i>
+        <span class="text">发布失败</span>
+      </ng-container>
+    </button>
+  </div>
+
+  <mat-form-field class="title no-padding no-border" appearance="outline" autocomplete="off">
+    <input matInput [(ngModel)]="title" #input="matInput">
+    <mat-label>
+      <i class="icon ri-article-line"></i> <span>输入问题，并以问号结尾</span>
+    </mat-label>
+  </mat-form-field>
+
+  <article class="tips">
+    <h3 class="title">
+      <i class="icon ri-question-fill"></i>
+      <span class="text">让你的提问获得更多解答</span>
+    </h3>
+    <ul class="list">
+      <li class="tip">保持文字简练，清晰描述问题的关键点</li>
+      <li class="tip">添加合适的话题，让问题更好的流通</li>
+      <li class="tip">确保问题没有被提问过</li>
+    </ul>
+  </article>
+
+  <app-editor [(value)]="content" (after)="input.focus()" placeholder="对问题补充说明，可以更快的获得解答（选填）"></app-editor>
+
+</div>

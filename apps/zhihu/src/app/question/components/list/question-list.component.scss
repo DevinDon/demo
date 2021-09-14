@@ -1,0 +1,30 @@
+:host {
+  display       : flex;
+  flex-direction: column;
+}
+
+.container {
+  display       : flex;
+  flex-direction: column;
+
+  >:not(:first-child) {
+    margin-top: 0.25rem;
+  }
+
+  >:not(:last-child) {
+    margin-bottom: 0.25rem;
+  }
+
+  >.loading {
+    height : 2rem;
+    width  : 100%;
+    padding: 0.5rem 0;
+  }
+
+  >.publish {
+    position : fixed;
+    bottom   : 1.5rem;
+    right    : 1.5rem;
+    font-size: large;
+  }
+}

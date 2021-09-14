@@ -1,0 +1,34 @@
+<ng-container *ngIf="type === 'custom'">
+  <ng-content></ng-content>
+</ng-container>
+
+<ng-container *ngIf="type === 'action'">
+  <div class="action">
+    <button mat-icon-button [disabled]="disabled" [routerLink]="[ back ]">
+      <i class="icon ri-arrow-left-line"></i>
+    </button>
+    <button mat-icon-button [disabled]="disabled" [routerLink]="[ '/search' ]">
+      <i class="icon ri-search-eye-line"></i>
+    </button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="type === 'home'">
+  <div class="search">
+    <app-search [disabled]="true" [routerLink]="[ '/search' ]"></app-search>
+    <button mat-icon-button>
+      <i class="icon ri-user-line"></i>
+    </button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="type === 'search'">
+  <div class="search">
+    <app-search #input (enter)="input.value && action._elementRef.nativeElement.click()"
+      (valueChange)="valueEmitter.next($event)" [value]="value"></app-search>
+    <button #action mat-icon-button
+      (click)="input.value ? searchEmitter.next(input.value) : router.navigateByUrl('/question')">
+      <i class="icon" [class.ri-search-2-line]="!!input.value" [class.ri-arrow-go-back-line]="!input.value"></i>
+    </button>
+  </div>
+</ng-container>

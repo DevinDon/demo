@@ -1,0 +1,67 @@
+<app-toolbar class="toolbar" type="action" [back]="back" [disabled]="!question"></app-toolbar>
+
+<div class="container">
+
+  <ng-container *ngIf="question; else loadingQuestionTemplate">
+    <div class="question">
+      <h2 class="title" [routerLink]="[ '/question', question.id ]">{{ question.title }}</h2>
+      <div class="count">
+        <span>{{ question.count.visit | readify }}浏览</span>
+        <span>{{ question.count.answer | readify }}回答</span>
+        <span>{{ question.count.like | readify }}喜欢</span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loadingQuestionTemplate>
+    <app-loading>正在加载中...</app-loading>
+  </ng-template>
+
+  <ng-container *ngIf="answer; else loadingAnswerTemplate">
+
+    <div class="answer">
+
+      <div class="user">
+        <img src="{{ answer.user.head }}" alt="头像" class="head">
+        <div class="text">
+          <span class="name">{{ answer.user.name }}</span>
+          <span class="motto">{{ answer.user.motto }}</span>
+        </div>
+      </div>
+      <p class="approve">{{ answer.count.approve | readify }}人赞同了该回答</p>
+      <article class="content" [innerHTML]="answer.content"></article>
+      <p class="date">编辑于 {{ answer.date | date:'YYYY-MM-dd' }}</p>
+
+    </div>
+
+    <ng-container *ngIf="answer">
+
+      <div class="action">
+        <div class="buttons">
+          <button class="approve" [class.active]="answer.status === 'approve'" (click)="approve()">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
+              <path
+                d="M2 18.242c0-.326.088-.532.237-.896l7.98-13.203C10.572 3.57 11.086 3 12 3c.915 0 1.429.571 1.784 1.143l7.98 13.203c.15.364.236.57.236.896 0 1.386-.875 1.9-1.955 1.9H3.955c-1.08 0-1.955-.517-1.955-1.9z"
+                fill-rule="evenodd"></path>
+            </svg>
+            <span class="text">赞同 {{ answer.count.approve | readify }}</span>
+          </button>
+          <button class="oppose" [class.active]="answer.status === 'oppose'" (click)="oppose()">
+            <svg fill="currentColor" viewBox="0 0 24 24" width="10" height="10">
+              <path
+                d="M20.044 3H3.956C2.876 3 2 3.517 2 4.9c0 .326.087.533.236.896L10.216 19c.355.571.87 1.143 1.784 1.143s1.429-.572 1.784-1.143l7.98-13.204c.149-.363.236-.57.236-.896 0-1.386-.876-1.9-1.956-1.9z"
+                fill-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <button class="comment">评论 {{ answer.count.comment }}</button>
+      </div>
+
+    </ng-container>
+
+  </ng-container>
+
+  <ng-template #loadingAnswerTemplate>
+    <app-loading [style.height]="'80vh'">正在加载回答...</app-loading>
+  </ng-template>
+
+</div>

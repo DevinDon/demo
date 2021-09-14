@@ -1,0 +1,128 @@
+:host {
+  display       : flex;
+  flex-direction: column;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.switch {
+  display: none;
+}
+
+.switch,
+.switch:after,
+.switch:before,
+.switch *,
+.switch *:after,
+.switch *:before,
+.switch+.switch-button {
+  box-sizing: border-box;
+}
+
+.switch::-moz-selection,
+.switch:after::-moz-selection,
+.switch:before::-moz-selection,
+.switch *::-moz-selection,
+.switch *:after::-moz-selection,
+.switch *:before::-moz-selection,
+.switch+.switch-button::-moz-selection {
+  background: none;
+}
+
+.switch::selection,
+.switch:after::selection,
+.switch:before::selection,
+.switch *::selection,
+.switch *:after::selection,
+.switch *:before::selection,
+.switch+.switch-button::selection {
+  background: none;
+}
+
+.switch+.switch-button {
+  outline            : 0;
+  display            : block;
+  width              : 5rem;
+  height             : 2rem;
+  position           : relative;
+  cursor             : pointer;
+  -webkit-user-select: none;
+  -moz-user-select   : none;
+  -ms-user-select    : none;
+  user-select        : none;
+}
+
+.switch+.switch-button:after,
+.switch+.switch-button:before {
+  position: relative;
+  display : block;
+  width   : 70%;
+  height  : 100%;
+}
+
+.switch+.switch-button:after,
+.switch:checked+.switch-button:after {
+  font-size      : smaller;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+  font-weight    : bold;
+}
+
+.switch+.switch-button:after {
+  left   : 0;
+  content: "最新";
+}
+
+.switch:checked+.switch-button:after {
+  left   : 30%;
+  content: "最热";
+}
+
+.switch+.switch-button:before {
+  display: none;
+}
+
+.switch-ios+.switch-button {
+  background        : #fbfbfb;
+  border-radius     : 2rem;
+  padding           : 2px;
+  -webkit-transition: all .4s ease;
+  transition        : all .4s ease;
+  border            : 1px solid #e8eae9;
+}
+
+.switch-ios+.switch-button:after {
+  border-radius     : 2em;
+  background        : #fbfbfb;
+  -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  transition        : left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  box-shadow        : 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+
+.switch-ios+.switch-button:hover:after {
+  will-change: padding;
+}
+
+.switch-ios+.switch-button:active {
+  box-shadow: inset 0 0 0 2em #e8eae9;
+}
+
+.switch-ios+.switch-button:active:after {
+  padding-right: .8em;
+}
+
+.switch-ios:checked+.switch-button {
+  background: #ccc;
+}
+
+.switch-ios:checked+.switch-button:active {
+  box-shadow: none;
+}
+
+.switch-ios:checked+.switch-button:active:after {
+  margin-left: -.8em;
+}

@@ -1,0 +1,86 @@
+:host {
+  display       : flex;
+  flex-direction: column;
+}
+
+.container {
+
+  >.question {
+    padding         : 1rem;
+    background-color: white;
+
+    >.tags {
+      display       : flex;
+      flex-direction: row;
+
+      >.tag {
+        padding         : 0.25rem 0.75rem;
+        background-color: #f5f5f5;
+        border-radius   : 4px;
+        color           : gray;
+
+        &:not(:first-child) {
+          margin-left: 0.25rem;
+        }
+
+        &:not(:last-child) {
+          margin-right: 0.25rem;
+        }
+      }
+    }
+
+    >.title {
+      font-weight: bold;
+      margin     : 1rem 0;
+    }
+
+    >.count {
+      display       : flex;
+      flex-direction: row;
+      font-size     : smaller;
+      color         : gray;
+
+      >:not(:first-child) {
+        margin-left: 0.5rem;
+      }
+
+      >:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  >.filter {
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-between;
+    align-items     : center;
+    background-color: white;
+    padding         : 0.5rem 1rem;
+    margin-top      : 0.5rem;
+
+    >.title {
+      font-weight: bold;
+    }
+  }
+
+  >.answers {
+    display       : flex;
+    flex-direction: column;
+
+    >:not(:first-child) {
+      margin-top: 0.25rem;
+    }
+
+    >:not(:last-child) {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  >.publish {
+    position : fixed;
+    bottom   : 1.5rem;
+    right    : 1.5rem;
+    font-size: large;
+  }
+}

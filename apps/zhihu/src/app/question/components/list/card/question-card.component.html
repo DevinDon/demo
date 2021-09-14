@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="card">
+    <h3 class="title">{{ question.title }}</h3>
+    <div class="user">
+      <img src="{{ question.user.head }}" alt="头像" class="head">
+      <span class="name">{{ question.user.name }}</span>
+      <span class="motto">{{ question.user.motto }}</span>
+    </div>
+    <div class="content">
+      <p class="text">{{ content }}</p>
+      <ng-container *ngIf="question.cover">
+        <div class="cover" [style.background-image]="'url(' + question.cover! + ')'"></div>
+      </ng-container>
+    </div>
+    <div class="count">
+      <span>{{ question.count.visit | readify }}浏览</span>
+      <span>{{ question.count.answer | readify }}回答</span>
+      <span>{{ question.count.like | readify }}喜欢</span>
+    </div>
+  </div>
+
+</div>

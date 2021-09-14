@@ -1,0 +1,50 @@
+:host {
+  display       : flex;
+  flex-direction: column;
+  width         : 100%;
+  position      : relative;
+  outline       : none;
+}
+
+input {
+  box-sizing   : border-box;
+  font-family  : inherit;
+  margin       : 0;
+  position     : relative;
+  display      : block;
+  float        : right;
+  border       : none;
+  font-size    : small;
+  padding      : 0.5rem calc(1rem + 24px);
+  width        : 100%;
+  border-radius: 2rem;
+  background   : #f6f6f6;
+  color        : gray;
+  outline      : none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon {
+  border-radius  : 50%;
+  padding        : 2px 4px;
+  font-size      : medium;
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items    : center;
+
+  &.prefix {
+    position: absolute;
+    top     : calc((13px + 1rem) / 2 - (20px + 2px) / 2);
+    left    : 0.5rem;
+  }
+
+  &.suffix {
+    position: absolute;
+    top     : calc((13px + 1rem) / 2 - (20px + 2px) / 2);
+    right   : 0.5rem;
+  }
+}

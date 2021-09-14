@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="card">
+    <div class="user">
+      <img src="{{ answer.user.head }}" alt="头像" class="head">
+      <span class="name">{{ answer.user.name }}</span>
+    </div>
+    <ng-container *ngIf="answer.covers && answer.covers.length">
+      <div class="images">
+        <div class="image" *ngFor="let cover of answer.covers.slice(0, 3); let i = index;"
+          [class.more]="i === 2 && answer.covers.length > 3" [attr.data-more]="answer.covers.length - 3"
+          [ngStyle]="{'background-image': 'url(' + cover + ')'}">
+        </div>
+      </div>
+    </ng-container>
+    <p class="content">{{ content }}</p>
+    <div class="count">
+      <span>{{ answer.count.approve | readify }}赞同</span>
+      <span>{{ answer.count.oppose | readify }}反对</span>
+      <span>{{ answer.count.comment | readify }}评论</span>
+    </div>
+  </div>
+
+</div>

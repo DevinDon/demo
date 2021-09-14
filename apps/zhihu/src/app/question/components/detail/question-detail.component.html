@@ -1,0 +1,51 @@
+<app-toolbar class="toolbar" type="action"></app-toolbar>
+
+<div class="container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
+  (scrolled)="loadMore()">
+
+  <div class="question">
+    <ng-container *ngIf="question; else questionLoadingTemplate">
+      <div class="tags">
+        <span class="tag" *ngFor="let tag of question.tags">{{ tag }}</span>
+      </div>
+      <h2 class="title">{{ question.title }}</h2>
+      <article class="content" [innerHTML]="question.content"></article>
+      <div class="count">
+        <span>{{ question.count.visit | readify }}浏览</span>
+        <span>{{ question.count.answer | readify }}回答</span>
+        <span>{{ question.count.like | readify }}喜欢</span>
+      </div>
+    </ng-container>
+    <ng-template #questionLoadingTemplate>
+      <app-loading [style.height]="'25vh'">正在加载问题详情...</app-loading>
+    </ng-template>
+  </div>
+
+  <div class="filter">
+    <span class="title">回答 {{ question && question.count.answer || 0 }}</span>
+    <app-question-detail-switch (value)="fetchAnswers($event)"></app-question-detail-switch>
+  </div>
+
+  <div class="answers">
+    <ng-container *ngIf="answers === undefined">
+      <app-loading [style.height]="'60vh'">正在加载回答列表...</app-loading>
+    </ng-container>
+    <ng-container *ngIf="answers && answers.length === 0">
+      <p>暂时没有内容，点击右下角发布回答吧~</p>
+    </ng-container>
+    <ng-container *ngIf="answers && answers.length > 0">
+      <app-question-detail-answer-card *ngFor="let answer of answers; trackBy: trackByAnswerId" [answer]="answer"
+        [routerLink]="[ '/answer', answer.id ]">
+      </app-question-detail-answer-card>
+    </ng-container>
+    <ng-container *ngIf="status.loading">
+      <app-loading size="mini" direction="row">加载中...</app-loading>
+    </ng-container>
+  </div>
+
+  <button mat-mini-fab class="publish" color="primary" [routerLink]="[ '/answer/new', { question: question?.id } ]"
+    matTooltip="点击添加回答">
+    <i class="ri-pen-nib-line"></i>
+  </button>
+
+</div>

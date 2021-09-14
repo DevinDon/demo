@@ -1,0 +1,52 @@
+:host {
+  display         : flex;
+  flex-direction  : column;
+  background-color: white;
+  min-height      : 100vh;
+}
+
+.toolbar {
+  position: sticky;
+  top     : 0;
+  left    : 0;
+  width   : 100vw;
+}
+
+.container {
+  padding: 0 1rem;
+
+  .title {
+    margin: 0;
+  }
+
+  .item {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : 0.5rem;
+    font-size      : 14px;
+    line-height    : 14px;
+
+    >.icon {
+      color: gray;
+    }
+
+    >.text {
+      padding: 0 0.5rem;
+    }
+
+    >.split {
+      flex-grow: 1;
+    }
+
+    >.action {
+      border-radius: 50%;
+      padding      : 0.25rem;
+    }
+  }
+
+  .none {
+    text-align: center;
+  }
+}

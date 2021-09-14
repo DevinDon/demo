@@ -1,0 +1,70 @@
+:host {
+  display         : flex;
+  flex-direction  : column;
+  background-color: white;
+  min-height      : 100vh;
+}
+
+.toolbar {
+  position: sticky;
+  top     : 0;
+  left    : 0;
+  width   : 100vw;
+  z-index : 10;
+}
+
+.container {
+  display       : flex;
+  flex-direction: column;
+
+  >:not(:first-child) {
+    margin-top: 0.25rem;
+  }
+
+  >:not(:last-child) {
+    margin-bottom: 0.25rem;
+  }
+
+  >.title {
+    padding: 0 1rem;
+  }
+
+  >.tags {
+    display         : flex;
+    flex-direction  : row;
+    padding         : 0 1rem;
+    overflow-x      : scroll;
+    overflow-y      : hidden;
+    background-color: white;
+    z-index         : 0;
+
+    >.tag {
+      padding         : 0.25rem 0.75rem;
+      background-color: #f5f5f5;
+      border-radius   : 4px;
+      color           : gray;
+      flex-shrink     : 0;
+
+      &:not(:first-child) {
+        margin-left: 0.25rem;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  >.loading {
+    height : 2rem;
+    width  : 100%;
+    padding: 0.5rem 0;
+  }
+
+  >.publish {
+    position : fixed;
+    bottom   : 1.5rem;
+    right    : 1.5rem;
+    font-size: large;
+  }
+}

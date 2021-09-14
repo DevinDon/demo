@@ -59,6 +59,13 @@
     },
     "weibo-api": {
       "tags": []
+    },
+    "zhihu": {
+      "tags": []
+    },
+    "zhihu-e2e": {
+      "tags": [],
+      "implicitDependencies": ["zhihu"]
     }
   }
 }

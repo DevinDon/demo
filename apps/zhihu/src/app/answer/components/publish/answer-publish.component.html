@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="actions">
+    <button mat-button [routerLink]="[ '/question', id ]">
+      <i class="icon ri-close-line"></i>
+      <span class="text">关闭</span>
+    </button>
+    <button mat-button color="primary" [disabled]="!content || content.length <= 1 || status.publishing !== 'init'"
+      (click)="publish()">
+      <ng-container *ngIf="status.publishing === 'init'">
+        <i class="icon ri-send-plane-line"></i>
+        <span class="text">回答问题</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'loading'">
+        <i class="icon ri-loader-5-line rotate"></i>
+        <span class="text">正在提交</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'succeed'">
+        <i class="icon ri-check-line"></i>
+        <span class="text">回答成功</span>
+      </ng-container>
+      <ng-container *ngIf="status.publishing === 'failed'">
+        <i class="icon ri-close-line"></i>
+        <span class="text">回答失败</span>
+      </ng-container>
+    </button>
+  </div>
+
+  <h2 class="title">{{ title }}</h2>
+
+  <hr class="split">
+
+  <app-editor [(value)]="content" placeholder="在这里写上你的回答"></app-editor>
+
+</div>

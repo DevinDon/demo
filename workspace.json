@@ -663,6 +663,137 @@
           }
         }
       }
+    },
+    "zhihu": {
+      "projectType": "application",
+      "root": "apps/zhihu",
+      "sourceRoot": "apps/zhihu/src",
+      "prefix": "demo",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/zhihu",
+            "index": "apps/zhihu/src/index.html",
+            "main": "apps/zhihu/src/main.ts",
+            "polyfills": "apps/zhihu/src/polyfills.ts",
+            "tsConfig": "apps/zhihu/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/zhihu/src/favicon.ico",
+              "apps/zhihu/src/assets"
+            ],
+            "styles": [
+              "apps/zhihu/src/styles/editor.scss",
+              "apps/zhihu/src/styles/index.scss",
+              "apps/zhihu/src/styles/material.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/zhihu/src/environments/environment.ts",
+                  "with": "apps/zhihu/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "zhihu:build:production"
+            },
+            "development": {
+              "browserTarget": "zhihu:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "zhihu:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/zhihu/src/**/*.ts",
+              "apps/zhihu/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/zhihu"
+          ],
+          "options": {
+            "jestConfig": "apps/zhihu/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "zhihu-e2e": {
+      "root": "apps/zhihu-e2e",
+      "sourceRoot": "apps/zhihu-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/zhihu-e2e/cypress.json",
+            "devServerTarget": "zhihu:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "zhihu:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "apps/zhihu-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

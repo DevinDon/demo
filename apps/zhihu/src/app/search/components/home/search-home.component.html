@@ -1,0 +1,19 @@
+<app-toolbar class="toolbar" type="search" (search)="search($event)" [value]="value"></app-toolbar>
+
+<div class="container">
+
+  <h3 class="title">搜索历史</h3>
+  <ng-container *ngIf="list && list.length > 0; then historyList; else historyNone"></ng-container>
+  <ng-template #historyList>
+    <li class="item" matRipple *ngFor="let item of list; trackBy: trackBy" (click)="value = item">
+      <i class="icon ri-history-line"></i>
+      <span class="text">{{ item }}</span>
+      <span class="split"></span>
+      <i class="action ri-close-line" matRipple (click)="delete(item)"></i>
+    </li>
+  </ng-template>
+  <ng-template #historyNone>
+    <div class="none">暂无历史记录</div>
+  </ng-template>
+
+</div>

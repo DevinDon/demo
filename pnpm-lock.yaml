@@ -43,6 +43,7 @@ specifiers:
   '@types/jest': 26.0.24
   '@types/jquery': ^3.5.6
   '@types/marked': ^3.0.0
+  '@types/mockjs': '1'
   '@types/node': 14.14.33
   '@types/react': 17.0.3
   '@types/react-dom': 17.0.3
@@ -72,8 +73,10 @@ specifiers:
   koa-backend-server: '0.4'
   marked: ^3.0.3
   mini-css-extract-plugin: ^2.1.0
+  mockjs: '1'
   moment: '2'
   mongodb: ^4.1.1
+  ngx-infinite-scroll: ^10.0.1
   node-fetch: '2'
   prettier: ^2.3.1
   query-string: '6'
@@ -94,6 +97,7 @@ specifiers:
   tslib: ^2.0.0
   typeorm: ^0.2.37
   typescript: ~4.3.5
+  vditor: '3'
   webpack: ^5.47.0
   webpack-dev-server: 4.0.0-rc.0
   webpack-merge: ^5.8.0
@@ -153,6 +157,7 @@ devDependencies:
   '@types/jest': 26.0.24
   '@types/jquery': 3.5.6
   '@types/marked': 3.0.0
+  '@types/mockjs': 1.0.4
   '@types/node': 14.14.33
   '@types/react': 17.0.3
   '@types/react-dom': 17.0.3
@@ -181,8 +186,10 @@ devDependencies:
   koa-backend-server: 0.4.8_mongodb@4.1.1
   marked: 3.0.3
   mini-css-extract-plugin: 2.3.0_webpack@5.52.1
+  mockjs: 1.1.0
   moment: 2.29.1
   mongodb: 4.1.1
+  ngx-infinite-scroll: 10.0.1
   node-fetch: 2.6.2
   prettier: 2.4.0
   query-string: 6.14.1
@@ -198,6 +205,7 @@ devDependencies:
   ts-jest: 27.0.3_jest@27.0.3+typescript@4.3.5
   typeorm: 0.2.37_mongodb@4.1.1
   typescript: 4.3.5
+  vditor: 3.8.6
   webpack: 5.52.1
   webpack-dev-server: 4.0.0-rc.0_webpack@5.52.1
   webpack-merge: 5.8.0
@@ -4136,6 +4144,11 @@ packages:
       picomatch: 2.3.0
     dev: true
 
+  /@scarf/scarf/1.1.1:
+    resolution: {integrity: sha512-VGbKDbk1RFIaSmdVb0cNjjWJoRWRI/Weo23AjRCC2nryO0iAS8pzsToJfPVPtVs74WHw4L1UTADNdIYRLkirZQ==}
+    requiresBuild: true
+    dev: true
+
   /@schematics/angular/12.2.5:
     resolution: {integrity: sha512-Ln2GyO7Y00PrQKjqCONCDb4dwGzGboH3zIJvicWzFO+ZgkNLr/dsitGKm8b8OfR/UEiBcnK72xwPj9FWfXA4EQ==}
     engines: {node: ^12.14.1 || >=14.0.0, npm: ^6.11.0 || ^7.5.6, yarn: '>= 1.13.0'}
@@ -4572,6 +4585,10 @@ packages:
 
   /@types/minimatch/3.0.5:
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
+    dev: true
+
+  /@types/mockjs/1.0.4:
+    resolution: {integrity: sha512-gK20xPqJhzMIitechVbvfnAk+oBIxVRnWrihJpRYHMI6UHCB/cvWgJa+dy6trRwQLE3AbtAJnXpm7pn6blG8sA==}
     dev: true
 
   /@types/node/14.14.33:
@@ -7688,6 +7705,10 @@ packages:
 
   /detect-node/2.1.0:
     resolution: {integrity: sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==}
+    dev: true
+
+  /diff-match-patch/1.0.5:
+    resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
     dev: true
 
   /diff-sequences/26.6.2:
@@ -11797,6 +11818,13 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  /mockjs/1.1.0:
+    resolution: {integrity: sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ==}
+    hasBin: true
+    dependencies:
+      commander: 7.2.0
+    dev: true
+
   /moment/2.29.1:
     resolution: {integrity: sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==}
     dev: true
@@ -11949,6 +11977,14 @@ packages:
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  /ngx-infinite-scroll/10.0.1:
+    resolution: {integrity: sha512-7is0eJZ9kJPsaHohRmMhJ/QFHAW9jp9twO5HcHRvFM/Yl/R8QCiokgjwmH0/CR3MuxUanxfHZMfO3PbYTwlBEg==}
+    requiresBuild: true
+    dependencies:
+      '@scarf/scarf': 1.1.1
+      opencollective-postinstall: 2.0.3
+    dev: true
 
   /nice-napi/1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
@@ -12353,6 +12389,11 @@ packages:
       define-lazy-prop: 2.0.0
       is-docker: 2.2.1
       is-wsl: 2.2.0
+    dev: true
+
+  /opencollective-postinstall/2.0.3:
+    resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
+    hasBin: true
     dev: true
 
   /opener/1.5.2:
@@ -17195,6 +17236,12 @@ packages:
   /vary/1.1.2:
     resolution: {integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=}
     engines: {node: '>= 0.8'}
+    dev: true
+
+  /vditor/3.8.6:
+    resolution: {integrity: sha512-KZSmg593dTx/BmX9HdXcZCLi5stkJvW3AHVq4gOVvA00JnZngT7sjlX8WlfWbLe0A80UzelNSVXff3yoyljRAA==}
+    dependencies:
+      diff-match-patch: 1.0.5
     dev: true
 
   /vendors/1.0.4:
