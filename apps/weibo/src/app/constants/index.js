@@ -1,7 +1,7 @@
 export const ACCESS_TOKEN_KEY = 'ACCESS_TOKEN_KEY';
 export const UID_KEY = 'UID_KEY';
 export const getUid = () => localStorage.getItem(UID_KEY);
-export const API = 'https://api.weibo.devin.red';
+export const API = '/api';
 
 export const APP_KEY = '3696852244';
 export const APP_SECRET = '52eaa55c068e880f58b81cab494f819e';

@@ -56,6 +56,9 @@
     },
     "weibo": {
       "tags": []
+    },
+    "weibo-api": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,101 @@
+{
+  "extends": [
+    "../../.eslintrc.json"
+  ],
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+      ],
+      "rules": {
+        "arrow-parens": [
+          "warn",
+          "as-needed"
+        ],
+        "@typescript-eslint/comma-spacing": [
+          "warn",
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "@typescript-eslint/comma-dangle": [
+          "error",
+          "always-multiline"
+        ],
+        "curly": [
+          "warn",
+          "all"
+        ],
+        "dot-location": [
+          "warn",
+          "property"
+        ],
+        "no-console": [
+          "warn"
+        ],
+        "@typescript-eslint/quotes": [
+          "warn",
+          "single"
+        ],
+        "quote-props": [
+          "warn",
+          "as-needed"
+        ],
+        "@typescript-eslint/semi": [
+          "error",
+          "always"
+        ],
+        "semi-style": [
+          "warn",
+          "last"
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+          "off"
+        ],
+        "no-unused-vars": [
+          "off"
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "none"
+          }
+        ],
+        "@typescript-eslint/no-empty-function": [
+          "off"
+        ]
+      }
+    }
+  ]
+}

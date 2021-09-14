@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微博模拟 API - Weibo API</title>
+  <meta name="description" content="模拟微博 API，仅供学习使用，如有侵权请联系作者">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #vditor {
+      padding: 0 1rem;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vditor@3.7.0/dist/index.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vditor@3.7.0/dist/method.min.js" defer></script>
+</head>
+
+<body>
+  <div id="vditor" class="vidtor-reset"></div>
+</body>
+
+<script>
+  const render = async (url = 'https://cdn.jsdelivr.net/gh/devindon/weibo-api/README.md') => fetch(url)
+    .then(response => response.text())
+    .then(markdown => Vditor.preview(
+      document.getElementById('vditor'),
+      markdown,
+      {
+        anchor: 2,
+        markdown: {
+          toc: true
+        }
+      }
+    ))
+    .catch(error => console.error(`Error while fetch README:\n${markdown}`));
+
+  render();
+</script>
+
+</html>
