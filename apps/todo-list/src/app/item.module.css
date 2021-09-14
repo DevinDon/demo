@@ -1,0 +1,32 @@
+.item {
+  display         : flex;
+  flex-direction  : row;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 8px;
+  background-color: #fff;
+  color           : #2f3542;
+  margin          : 8px 0;
+  border-radius   : 2px;
+  cursor          : pointer;
+}
+
+.left {
+  display       : flex;
+  flex-direction: row;
+  align-items   : center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.delete {
+  opacity   : 0;
+  transition: opacity 0.3s;
+}
+
+.item:hover .delete {
+  opacity   : 1;
+  transition: opacity 0.3s;
+}
