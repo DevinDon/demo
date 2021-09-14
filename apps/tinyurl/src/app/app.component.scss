@@ -1,0 +1,116 @@
+:host {
+  display       : flex;
+  flex-direction: column;
+
+  width     : 100vw;
+  min-height: 100vh;
+}
+
+#header {
+  background-image : url('../assets/wave-top.png');
+  background-repeat: no-repeat;
+  background-size  : 100% 100%;
+  padding-bottom   : 2.5rem;
+
+  >.toolbar {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    align-items    : center;
+
+    width  : calc(100% - 2 * 2rem);
+    height : 4rem;
+    padding: 0 2rem;
+    color  : white;
+
+    >.logo {
+      height: 40px;
+
+      >img {
+        height   : 40px;
+        // filter: invert(1); // enable if header background-color is light
+      }
+    }
+
+    >.title {
+      display       : flex;
+      flex-direction: row;
+      align-items   : center;
+      color         : inherit;
+
+      margin: 0;
+
+      >.icon {
+        height      : 1rem;
+        margin-right: 0.25rem;
+      }
+
+      >.text {
+        font-size  : 1rem;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+#body {
+  display       : flex;
+  flex-direction: column;
+  flex-grow     : 1;
+
+  padding: 0 1rem;
+  width  : calc(100% - 2rem);
+}
+
+#footer {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-items    : center;
+
+  width    : calc(100% - 2 * 2rem);
+  padding  : 0.5rem 2rem;
+  color    : gray;
+  font-size: x-small;
+
+  >.copyright {
+    >a {
+      color: inherit;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #body {
+    max-width: 1000px;
+    margin   : 0 auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #header {
+
+    >.toolbar {
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+      align-items    : center;
+
+      width  : auto;
+      height : 3rem;
+      padding: 0 1rem;
+
+      >.logo {
+        height: 2rem;
+
+        >img {
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  #footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+<h2 style="text-align: center;">History</h2>
+
+<ng-container *ngIf="cache.selectAll().length; else elseTemplate">
+  <div class="list">
+    <a class="item" [href]="getUrl(link.id)" *ngFor="let link of getLinks()" mat-ripple>
+      <img class="favicon" src="https://cdn.jsdelivr.net/gh/devindon/api/image/link-icon-blue.png" alt="Favicon">
+      <div class="title">{{ getHostname(link.origin) }}</div>
+      <div class="link">{{ getHostname(link.origin) }}</div>
+      <div class="time">{{ link.createdAt | date:"MM-dd HH:mm" }}</div>
+    </a>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <p class="empty">There is no history in this device</p>
+</ng-template>

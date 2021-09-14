@@ -54,6 +54,13 @@
     "index": {
       "tags": []
     },
+    "tinyurl": {
+      "tags": []
+    },
+    "tinyurl-e2e": {
+      "tags": [],
+      "implicitDependencies": ["tinyurl"]
+    },
     "todo-list": {
       "tags": []
     },

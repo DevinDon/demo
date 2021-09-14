@@ -1,0 +1,9 @@
+<h2>《用户与隐私协议》</h2>
+<p class="desc">更新时间：{{ update | date:'yyyy 年 MM 月 dd' }}</p>
+
+<ng-container *ngIf="paragraphs.length; else templateLoading">
+  <p *ngFor="let p of paragraphs">{{ p }}</p>
+</ng-container>
+<ng-template #templateLoading>
+  <app-loading color="#2196f3" style="margin: auto;"></app-loading>
+</ng-template>

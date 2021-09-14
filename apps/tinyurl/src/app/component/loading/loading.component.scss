@@ -1,0 +1,40 @@
+$height: 1.6rem;
+
+:host {
+  display       : flex;
+  flex-direction: row;
+  flex-wrap     : wrap;
+  width         : 6rem;
+  padding       : 0.2rem 0;
+
+  >.cube {
+    height   : $height;
+    flex-grow: 1;
+    animation: CubeGridScale 1.5s infinite ease-in-out;
+    transform: scale(0.1, 0.1);
+  }
+
+  @for $i from 1 through 9 {
+    .cube:nth-child(#{$i}) {
+      animation-delay: $i / 10 + s;
+    }
+  }
+}
+
+@keyframes CubeGridScale {
+
+  0% {
+    transform: scale(0.1, 0.1);
+  }
+
+  40%,
+  50% {
+    transform: scale(1, 1);
+  }
+
+  90%,
+  100% {
+    transform: scale(0.1, 0.1);
+  }
+
+}

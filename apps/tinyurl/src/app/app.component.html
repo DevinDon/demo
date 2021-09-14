@@ -1,0 +1,23 @@
+<header id="header">
+  <section class="toolbar">
+    <a class="logo" href="https://blog.don.red" matTooltip="前往夜寒苏的天台">
+      <img src="assets/company-logo.svg" alt="夜寒苏的天台">
+    </a>
+    <a [routerLink]="[ '/' ]" class="title" matTooltip="Back to the homepage">
+      <img src="assets/logo.svg" alt="Logo" class="icon">
+      <span class="text">TinyURL</span>
+    </a>
+  </section>
+</header>
+
+<section id="body">
+  <router-outlet></router-outlet>
+</section>
+
+<footer id="footer">
+  <span class="copyright">Copyright © 2020+ <a class="animation" href="https://blog.don.red"
+      target="_blank">夜寒苏</a></span>
+  <span class="policy">点击生成短网址，即代表您同意<a class="animation" [routerLink]="[ '/policy' ]">《用户与隐私协议》</a></span>
+</footer>
+
+<app-loading *ngIf="false"></app-loading>
