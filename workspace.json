@@ -513,7 +513,10 @@
               "browserTarget": "tinyurl:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "apps/tinyurl/proxy.config.json"
+          }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -535,6 +538,66 @@
           "outputs": ["coverage/apps/tinyurl"],
           "options": {
             "jestConfig": "apps/tinyurl/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "tinyurl-api": {
+      "root": "apps/tinyurl-api",
+      "projectType": "application",
+      "sourceRoot": "apps/tinyurl-api/src",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/tinyurl-api",
+            "main": "apps/tinyurl-api/src/main.ts",
+            "tsConfig": "apps/tinyurl-api/tsconfig.app.json",
+            "assets": ["apps/tinyurl-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/tinyurl-api/src/environments/environment.ts",
+                  "with": "apps/tinyurl-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "tinyurl-api:build"
+          }
+        },
+        "mongo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "docker run --name rester-mongodb-standalone -e MONGO_INITDB_ROOT_USERNAME=rester-dev -e MONGO_INITDB_ROOT_PASSWORD=rester-dev -p 27017:27017 -v rester-mongodb-standalone:/data/db -d mongo:4"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/tinyurl-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/tinyurl-api"],
+          "options": {
+            "jestConfig": "apps/tinyurl-api/jest.config.js",
             "passWithNoTests": true
           }
         }

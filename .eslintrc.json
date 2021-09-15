@@ -1,19 +1,10 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "**/*"
-  ],
-  "plugins": [
-    "@nrwl/nx"
-  ],
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
@@ -23,9 +14,7 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": [
-                  "*"
-                ]
+                "onlyDependOnLibsWithTags": ["*"]
               }
             ]
           }
@@ -33,24 +22,48 @@
       }
     },
     {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/typescript"
-      ],
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
       "rules": {}
     },
     {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "extends": [
-        "plugin:@nrwl/nx/javascript"
-      ],
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
+    },
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+      ],
+      "rules": {
+        "arrow-parens": ["warn", "as-needed"],
+        "@typescript-eslint/comma-spacing": [
+          "warn",
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+        "curly": ["warn", "all"],
+        "dot-location": ["warn", "property"],
+        "no-console": ["warn"],
+        "@typescript-eslint/quotes": ["warn", "single"],
+        "quote-props": ["warn", "as-needed"],
+        "@typescript-eslint/semi": ["error", "always"],
+        "semi-style": ["warn", "last"],
+        "@typescript-eslint/no-inferrable-types": ["off"],
+        "no-unused-vars": ["off"],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "args": "none"
+          }
+        ],
+        "@typescript-eslint/no-empty-function": ["off"]
+      }
     }
   ]
 }

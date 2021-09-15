@@ -57,6 +57,9 @@
     "tinyurl": {
       "tags": []
     },
+    "tinyurl-api": {
+      "tags": []
+    },
     "tinyurl-e2e": {
       "tags": [],
       "implicitDependencies": ["tinyurl"]
