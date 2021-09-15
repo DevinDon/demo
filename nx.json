@@ -14,7 +14,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -30,26 +35,14 @@
     "blog-2017": {
       "tags": []
     },
-    "blog-2017-e2e": {
-      "tags": [],
-      "implicitDependencies": ["blog-2017"]
-    },
     "blog-2018": {
       "tags": []
     },
     "blog-2018-api": {
       "tags": []
     },
-    "blog-2018-e2e": {
-      "tags": [],
-      "implicitDependencies": ["blog-2018"]
-    },
     "blog-over": {
       "tags": []
-    },
-    "blog-over-e2e": {
-      "tags": [],
-      "implicitDependencies": ["blog-over"]
     },
     "index": {
       "tags": []
@@ -59,10 +52,6 @@
     },
     "tinyurl-api": {
       "tags": []
-    },
-    "tinyurl-e2e": {
-      "tags": [],
-      "implicitDependencies": ["tinyurl"]
     },
     "todo-list": {
       "tags": []
@@ -78,10 +67,6 @@
     },
     "zhihu": {
       "tags": []
-    },
-    "zhihu-e2e": {
-      "tags": [],
-      "implicitDependencies": ["zhihu"]
     }
   }
 }
