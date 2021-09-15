@@ -1,18 +1,18 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, delay, finalize } from 'rxjs/operators';
-import { Link } from 'src/app/@types';
+import { Link } from 'src/app/interfaces';
 import { ApiService } from 'src/app/service/api.service';
 import { CacheService } from 'src/app/service/cache.service';
 import { ButtonText, Icon, isInvalidURL, isLongURL, isShortURL, REG_IS_VALID_URL, Tip } from 'src/app/util';
 
 @Component({
-  selector: 'app-home',
+  selector: 'demo-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
 
@@ -42,8 +42,6 @@ export class HomeComponent implements OnInit {
       ),
     });
   }
-
-  ngOnInit() { }
 
   onInput() {
     const url = this.form.get('url')?.value;

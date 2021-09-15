@@ -5,7 +5,7 @@ import { of } from 'rxjs';
 import { catchError, delay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-policy',
+  selector: 'demo-policy',
   templateUrl: './policy.component.html',
   styleUrls: ['./policy.component.scss'],
 })

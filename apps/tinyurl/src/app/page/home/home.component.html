@@ -102,7 +102,7 @@
 
   <button color="primary" [disabled]="form.invalid || loading" (click)="submit()" mat-raised-button>
     <ng-container *ngIf="loading; else elseTemplate">
-      <app-loading style="margin: 2px auto;"></app-loading>
+      <demo-loading style="margin: 2px auto;"></demo-loading>
     </ng-container>
     <ng-template #elseTemplate>
       {{ button }}

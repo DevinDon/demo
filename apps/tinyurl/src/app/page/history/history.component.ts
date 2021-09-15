@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Link } from 'src/app/@types';
+import { Component } from '@angular/core';
+import { Link } from 'src/app/interfaces';
 import { CacheService } from 'src/app/service/cache.service';
 
 @Component({
-  selector: 'app-history',
+  selector: 'demo-history',
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.scss'],
 })
-export class HistoryComponent implements OnInit {
+export class HistoryComponent {
 
   constructor(
     public cache: CacheService,
   ) { }
-
-  ngOnInit() { }
 
   getUrl(id: string) {
     return `https://${this.cache.getDomain()}/${id}`;

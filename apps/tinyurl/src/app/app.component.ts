@@ -3,7 +3,7 @@ import { ApiService } from './service/api.service';
 import { CacheService } from './service/cache.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'demo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HOST } from '../@constant';
-import { Hosts, Link } from '../@types';
+import { HOST } from '../constants';
+import { Hosts, Link } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',

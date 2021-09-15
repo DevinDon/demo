@@ -25,7 +25,7 @@ export const isShortURL = (url: string): boolean => isValidURL(url) && !isLongUR
 export enum Icon {
   invalid = 'help_outline',
   link = 'link',
-  copy = 'content_copy'
+  copy = 'content_copy',
 }
 
 
@@ -33,7 +33,7 @@ export enum Tip {
   invalid = 'Enter your link to continue',
   shorten = 'Generate short link',
   restore = 'Restore origin link',
-  copy = 'Copy short link'
+  copy = 'Copy short link',
 }
 
 export enum ButtonText {
@@ -41,5 +41,5 @@ export enum ButtonText {
   shorten = 'Shorten',
   restore = 'Restore',
   copy = 'Copy',
-  copied = 'Copied'
+  copied = 'Copied',
 }

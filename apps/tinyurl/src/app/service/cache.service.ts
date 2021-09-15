@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Host, Link } from '../@types';
+import { Host, Link } from '../interfaces';
 
 const CACHE_KEY = 'CACHE_KEY';
 const HOSTS_KEY = 'HOSTS_KEY';
@@ -21,7 +21,7 @@ export class CacheService {
   insert(link: Link) {
     if (!this.links.find(item => item.id === link.id)) {
       this.links.push(link);
-    };
+    }
     this.save();
   }
 
