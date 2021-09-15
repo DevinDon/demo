@@ -6,12 +6,12 @@ const config: ResterConfig = {
   databases: [
     {
       type: 'mongodb',
-      host: 'database.don.red',
+      host: 'localhost',
       port: 27017,
-      database: 'tinyurl',
-      username: 'tinyurl',
-      password: 'tinyurl',
-      authSource: 'tinyurl',
+      database: 'dev',
+      username: 'dev',
+      password: 'dev',
+      authSource: 'dev',
       logger: Level.DEBUG,
       sync: true,
       entities: null,

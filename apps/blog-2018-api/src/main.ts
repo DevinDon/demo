@@ -6,6 +6,7 @@ import Song from './app/entity/song.entity';
 import Statistic from './app/entity/statistic.entity';
 import { paths } from './app/router';
 import { statistic } from './app/ware';
+import { environment } from './environments/environment';
 
 const config: KBSConfig = {
   router: {
@@ -20,23 +21,19 @@ const config: KBSConfig = {
   database: {
     ormconfig: false,
     options: {
-      type: 'mariadb',
-      host: 'database.don.red',
-      port: 3306,
-      username: 'blog-2018-api',
-      password: 'blog-2018-api',
-      database: 'blog-2018-api',
-      synchronize: true,
-      logging: true,
-      entities: [
-        Article,
-        Image,
-        Motto,
-        Song,
-        Statistic,
-      ],
-      migrations: [],
-      subscribers: [],
+      ...{
+        type: 'mariadb',
+        entities: [
+          Article,
+          Image,
+          Motto,
+          Song,
+          Statistic,
+        ],
+        migrations: [],
+        subscribers: [],
+      },
+      ...environment.options,
     },
   },
 };

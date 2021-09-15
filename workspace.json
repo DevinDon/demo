@@ -189,7 +189,8 @@
             "tsConfig": "apps/blog-2018-api/tsconfig.app.json",
             "assets": [
               "apps/blog-2018-api/src/assets"
-            ]
+            ],
+            "webpackConfig": "apps/blog-2018-api/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -535,7 +536,8 @@
             "tsConfig": "apps/tinyurl-api/tsconfig.app.json",
             "assets": [
               "apps/tinyurl-api/src/assets"
-            ]
+            ],
+            "webpackConfig": "apps/tinyurl-api/webpack.config.js"
           },
           "configurations": {
             "production": {
@@ -865,7 +867,8 @@
             "tsConfig": "apps/weibo-api/tsconfig.app.json",
             "assets": [
               "apps/weibo-api/src/assets"
-            ]
+            ],
+            "webpackConfig": "apps/weibo-api/webpack.config.js"
           },
           "configurations": {
             "production": {
