@@ -2,7 +2,10 @@ import { readdirSync } from 'fs';
 import { ProcessOutput } from 'zx';
 import { $, cd } from 'zx';
 
-process.env.BUILD_DIR = '.';
+export const print = async (output: ProcessOutput) => {
+  output.stdout && console.log(output.stdout);
+  output.stderr && console.error(output.stderr);
+};
 
 export const getAppList = () =>
   readdirSync(`${process.env.BUILD_DIR}/dist/apps/`);
@@ -44,10 +47,29 @@ export const pushAllImages = async (apps: string[]) => Promise.all(
   }),
 );
 
-export const print = async (output: ProcessOutput) => {
-  output.stdout && console.log(output.stdout);
-  output.stderr && console.error(output.stderr);
-};
-
 export const installDocker = async () =>
   $`wget -qO- https://get.docker.com/ | sh`.then(print);
+
+export const build = async () => {
+
+  const apps = getAppList();
+
+  await loginToDocker().then(print);
+  await untar().then(print);
+
+  await buildAllImages(apps)
+    .then(outputs => outputs.forEach(print));
+
+};
+
+export const push = async () => {
+
+  const apps = getAppList();
+
+  await loginToDocker().then(print);
+  await untar().then(print);
+
+  await buildAllImages(apps)
+    .then(outputs => outputs.forEach(print));
+
+};

@@ -1,28 +1,6 @@
 import { Tree } from '@nrwl/devkit';
-import { buildAllImages, getAppList, installDocker, loginToDocker, untar } from './libs';
+import { build, installDocker, push } from './libs';
 import { Schema } from './schema';
-
-const build = async () => {
-
-  const apps = getAppList();
-
-  await loginToDocker().then(print);
-  await untar().then(print);
-
-  await buildAllImages(apps).then(print);
-
-};
-
-const push = async () => {
-
-  const apps = getAppList();
-
-  await loginToDocker().then(print);
-  await untar().then(print);
-
-  await buildAllImages(apps).then(print);
-
-};
 
 export default async function (tree: Tree, { action }: Schema) {
   console.log(`Images will be ${action}.`);
