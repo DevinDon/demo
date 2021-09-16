@@ -1,3 +1,12 @@
-import { build } from './libs';
+import { buildAllImages, getAppList, loginToDocker } from './libs';
 
-build();
+(async () => {
+
+  const apps = getAppList();
+
+  await loginToDocker().then(print);
+
+  await buildAllImages(apps)
+    .then(outputs => outputs.forEach(print));
+
+})();
