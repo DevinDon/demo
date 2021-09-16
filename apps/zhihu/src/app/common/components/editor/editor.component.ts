@@ -1,19 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { HOST as host } from 'src/app/common/constants';
 import { ResourceType } from 'src/app/common/interfaces';
 import { join } from 'src/app/common/utils';
 import Vditor from 'vditor';
 
 @Component({
-  selector: 'app-editor',
+  selector: 'demo-editor',
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.scss'],
 })
-export class EditorComponent implements OnInit, AfterViewInit {
+export class EditorComponent implements AfterViewInit {
 
   @Input() value = '';
   @Output() valueChange = new EventEmitter<string>();
+  // eslint-disable-next-line @angular-eslint/no-output-rename
   @Output('after') afterEmitter = new EventEmitter<boolean>();
   @Input() placeholder = '在这里输入正文内容';
 
@@ -24,8 +25,6 @@ export class EditorComponent implements OnInit, AfterViewInit {
   constructor(
     private http: HttpClient,
   ) { }
-
-  ngOnInit() { }
 
   ngAfterViewInit() {
     this.vditor = new Vditor(this.editor.nativeElement, {

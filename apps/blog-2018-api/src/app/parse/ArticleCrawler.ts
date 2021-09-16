@@ -8,7 +8,7 @@ interface ArticleNode {
 }
 
 async function getArticle(id: number) {
-  return new Promise<ArticleNode>((rej) => {
+  return new Promise<ArticleNode>(rej => {
     console.log(`正在读取第 ${id} 篇文章.`);
     request(`http://wufazhuce.com/article/${id}`, res => {
       const chunks: any[] = [];
@@ -20,7 +20,7 @@ async function getArticle(id: number) {
         console.log(`第 ${id} 篇文章读取完毕.`);
         rej({
           id,
-          dom: new JSDOM(body.toString()).window.document
+          dom: new JSDOM(body.toString()).window.document,
         });
       });
     }).end();
@@ -37,7 +37,7 @@ async function parseArticle(articleNode: ArticleNode) {
     date: 0,
     summary: (dom.querySelector('.comilla-cerrar') as Element).innerHTML.trim(),
     text: ((dom.querySelector('.articulo-contenido') as Element).textContent as string).trim(),
-    html: (dom.querySelector('.articulo-contenido') as Element).innerHTML
+    html: (dom.querySelector('.articulo-contenido') as Element).innerHTML,
   };
   console.log(`第 ${article.id} 篇文章解析完毕.`);
   return article;

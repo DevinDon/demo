@@ -7,7 +7,7 @@ import { ContentService } from './content.service';
 @Component({
   selector: 'demo-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.scss']
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class ContentComponent implements OnInit {
   constructor(
     public app: AppService,
     public router: Router,
-    public service: ContentService
+    public service: ContentService,
   ) { }
 
   ngOnInit() {

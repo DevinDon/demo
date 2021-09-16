@@ -14,7 +14,7 @@ export class Crawler<T = any> {
    * @param url 目标链接.
    */
   protected async fetch(url: string): Promise<DOM> {
-    return new Promise<DOM>((rej) => {
+    return new Promise<DOM>(rej => {
       console.log(`正在获取文档: ${url}`);
       request(url, res => {
         const chunks: any[] = [];
@@ -26,7 +26,7 @@ export class Crawler<T = any> {
           rej({
             id: Date.now(),
             url,
-            doc: new JSDOM(body.toString()).window.document
+            doc: new JSDOM(body.toString()).window.document,
           });
           console.log(`文档读取完毕: ${url}`);
         });
@@ -41,7 +41,7 @@ export class Crawler<T = any> {
   protected async parse(data: DOM): Promise<Partial<T>> {
     // console.log(`开始解析文档: ${data.url}`);
     // console.log(`文档解析完毕: ${data.url}`);
-    console.log(`请重写此方法.`);
+    console.log('请重写此方法.');
     return {};
   }
 
@@ -50,7 +50,7 @@ export class Crawler<T = any> {
    * @param data 数据.
    */
   protected async save(data: Partial<T>): Promise<boolean> {
-    console.log(`请重写此方法`);
+    console.log('请重写此方法');
     return false;
   }
 

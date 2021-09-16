@@ -17,15 +17,15 @@ import { RoutingModule } from '../module/routing.module';
     ImageComponent,
     QuestionComponent,
     SongComponent,
-    VideoComponent
+    VideoComponent,
   ],
   imports: [
     SharedModule,
     MaterialModule,
-    RoutingModule
+    RoutingModule,
   ],
   providers: [
-    ContentService
-  ]
+    ContentService,
+  ],
 })
 export class ContentModule { }

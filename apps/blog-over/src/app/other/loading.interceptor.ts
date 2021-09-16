@@ -8,7 +8,7 @@ import { AppService } from '../app.service';
 export class LoadingInterceptor implements HttpInterceptor {
 
   constructor(
-    private app: AppService
+    private app: AppService,
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -19,7 +19,7 @@ export class LoadingInterceptor implements HttpInterceptor {
           this.app.openBar('无法发送请求，请稍后重试。');
           return of({ status: false } as any);
         }),
-        finalize(() => this.app.free())
+        finalize(() => this.app.free()),
       );
   }
 

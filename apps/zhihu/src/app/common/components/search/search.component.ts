@@ -3,7 +3,7 @@ import { Subject, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-search',
+  selector: 'demo-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   @Output() valueChange = new EventEmitter<any>();
 
   @Input() disabled = false;
+  // eslint-disable-next-line @angular-eslint/no-output-rename
   @Output('enter') enterEmitter = new EventEmitter<any>();
 
   @ViewChild('search') search!: ElementRef<HTMLInputElement>;

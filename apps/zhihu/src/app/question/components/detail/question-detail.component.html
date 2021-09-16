@@ -1,4 +1,5 @@
-<app-toolbar class="toolbar" type="action"></app-toolbar>
+<demo-toolbar class="toolbar" type="action">
+</demo-toolbar>
 
 <div class="container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
   (scrolled)="loadMore()">
@@ -17,29 +18,30 @@
       </div>
     </ng-container>
     <ng-template #questionLoadingTemplate>
-      <app-loading [style.height]="'25vh'">正在加载问题详情...</app-loading>
+      <demo-loading [style.height]="'25vh'">正在加载问题详情...</demo-loading>
     </ng-template>
   </div>
 
   <div class="filter">
     <span class="title">回答 {{ question && question.count.answer || 0 }}</span>
-    <app-question-detail-switch (value)="fetchAnswers($event)"></app-question-detail-switch>
+    <demo-question-detail-switch (value)="fetchAnswers($event)">
+    </demo-question-detail-switch>
   </div>
 
   <div class="answers">
     <ng-container *ngIf="answers === undefined">
-      <app-loading [style.height]="'60vh'">正在加载回答列表...</app-loading>
+      <demo-loading [style.height]="'60vh'">正在加载回答列表...</demo-loading>
     </ng-container>
     <ng-container *ngIf="answers && answers.length === 0">
       <p>暂时没有内容，点击右下角发布回答吧~</p>
     </ng-container>
     <ng-container *ngIf="answers && answers.length > 0">
-      <app-question-detail-answer-card *ngFor="let answer of answers; trackBy: trackByAnswerId" [answer]="answer"
+      <demo-question-detail-answer-card *ngFor="let answer of answers; trackBy: trackByAnswerId" [answer]="answer"
         [routerLink]="[ '/answer', answer.id ]">
-      </app-question-detail-answer-card>
+      </demo-question-detail-answer-card>
     </ng-container>
     <ng-container *ngIf="status.loading">
-      <app-loading size="mini" direction="row">加载中...</app-loading>
+      <demo-loading size="mini" direction="row">加载中...</demo-loading>
     </ng-container>
   </div>
 

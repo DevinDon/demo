@@ -13,9 +13,9 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        RouterOutletStubComponent
+        RouterOutletStubComponent,
       ],
-      providers: [{ provide: AppService, useValue: appServiceStub }]
+      providers: [{ provide: AppService, useValue: appServiceStub }],
     }).compileComponents();
     fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

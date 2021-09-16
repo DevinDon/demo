@@ -9,9 +9,9 @@ import { Component, Input } from '@angular/core';
     trigger('wave', [
       state('true', style({ display: 'block' })),
       state('false', style({ display: 'none' })),
-      transition('* <=> *', animate(300))
-    ])
-  ]
+      transition('* <=> *', animate(300)),
+    ]),
+  ],
 })
 export class WaveComponent {
 

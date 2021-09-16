@@ -10,17 +10,17 @@ export const form: Middleware = async (c, next) => {
   const req: Request = {
     name: c.request.body.name || '',
     email: c.request.body.email || '',
-    want: c.request.body.content || ''
+    want: c.request.body.content || '',
   };
   if (req.email && req.name) {
     c.body = {
       status: true,
-      content: '提交成功'
+      content: '提交成功',
     };
   } else {
     c.body = {
       status: false,
-      content: '提交失败'
+      content: '提交失败',
     };
   }
   await next();

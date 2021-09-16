@@ -12,7 +12,7 @@ type RESPContent = Partial<Image>[];
 /** POST: Image[]. */
 export const images: Middleware = async (c, next) => {
   const req: REQContent = {
-    amount: c.request.body.amount || 6
+    amount: c.request.body.amount || 6,
   };
   const results: RESPContent = await Image
     .createQueryBuilder()
@@ -26,13 +26,13 @@ export const images: Middleware = async (c, next) => {
       link: result.link,
       image: result.image,
       text: result.text,
-      date: result.date
+      date: result.date,
     });
   }
   (c.body as Resp<RESPContent>) = {
     id: Date.now(),
     status: Boolean(results.length),
-    content: data
+    content: data,
   };
   await next();
 };

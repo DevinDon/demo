@@ -7,20 +7,20 @@ import { concatMap, debounceTime, delay } from 'rxjs/operators';
 import { destory } from './other/destory';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppService implements OnDestroy {
 
   public info = {
-    isDesktop: window.innerWidth > 599
+    isDesktop: window.innerWidth > 599,
   };
 
   public status = {
     loading: {
       subjection: new Subject<number>(),
       temp: 0,
-      value: 0
-    }
+      value: 0,
+    },
   };
 
   public subscriptions: Subscription[] = [];
@@ -30,22 +30,22 @@ export class AppService implements OnDestroy {
   constructor(
     public bar: MatSnackBar,
     public dialog: MatDialog,
-    public router: Router
+    public router: Router,
   ) {
     // window resize
     this.subscriptions
       .push(
         fromEvent(window, 'resize')
           .pipe(
-            debounceTime(100)
-          ).subscribe(() => this.info.isDesktop = window.innerWidth > 599)
+            debounceTime(100),
+          ).subscribe(() => this.info.isDesktop = window.innerWidth > 599),
       );
     // loading status
     this.subscriptions
       .push(
         this.status.loading.subjection
           .pipe(debounceTime(16))
-          .subscribe(v => this.status.loading.value = v)
+          .subscribe(v => this.status.loading.value = v),
       );
   }
 
@@ -61,9 +61,9 @@ export class AppService implements OnDestroy {
     generate(
       window.pageYOffset,
       y => y > height,
-      y => y - 0.05 * y - 8
+      y => y - 0.05 * y - 8,
     ).pipe(
-      concatMap(y => of(y).pipe(delay(16.7)))
+      concatMap(y => of(y).pipe(delay(16.7))),
     ).subscribe(y => window.scrollTo(0, y));
   }
 
@@ -71,9 +71,9 @@ export class AppService implements OnDestroy {
     generate(
       height,
       y => y > 0,
-      y => y - 0.015 * y - 8
+      y => y - 0.015 * y - 8,
     ).pipe(
-      concatMap(y => of(y).pipe(delay(16.7)))
+      concatMap(y => of(y).pipe(delay(16.7))),
     ).subscribe(y => window.scrollTo(0, height - y));
   }
 

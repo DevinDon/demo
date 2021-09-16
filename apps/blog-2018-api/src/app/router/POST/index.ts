@@ -25,8 +25,8 @@ const index: Middleware = async (c, next) => {
             (__)\\       )\\/\
                 ||----w |
                 ||     ||
-    `
-    }
+    `,
+    },
   };
   await next();
 };
@@ -37,37 +37,37 @@ const notFound: Middleware = async (c, next) => {
     (c.body as Resp) = {
       id: Date.now(),
       status: false,
-      content: '404 Not Found'
+      content: '404 Not Found',
     };
   }
 };
 
 export const POSTPATHS: RouterPaths = {
-  'index': {
+  index: {
     path: '/',
     ware: index,
-    cors: allowAllCORS
-  }, 'articles': {
+    cors: allowAllCORS,
+  }, articles: {
     path: '/articles',
     ware: articles,
-    cors: allowAllCORS
-  }, 'images': {
+    cors: allowAllCORS,
+  }, images: {
     path: '/images',
     ware: images,
-    cors: allowAllCORS
-  }, 'mottos': {
+    cors: allowAllCORS,
+  }, mottos: {
     path: '/mottos',
     ware: mottos,
-    cors: allowAllCORS
-  }, 'songs': {
+    cors: allowAllCORS,
+  }, songs: {
     path: '/songs',
     ware: songs,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   }, 'sign in': {
     path: '/sign/in',
     ware: signin,
-    cors: allowAllCORS
-  }
+    cors: allowAllCORS,
+  },
 };
 
 export default POSTPATHS;

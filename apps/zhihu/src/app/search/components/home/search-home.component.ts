@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { SearchHistoryService } from '../../services/search-history.service';
 
 @Component({
-  selector: 'app-search-home',
+  selector: 'demo-search-home',
   templateUrl: './search-home.component.html',
   styleUrls: ['./search-home.component.scss'],
 })

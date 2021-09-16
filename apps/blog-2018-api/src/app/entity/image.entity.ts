@@ -6,7 +6,7 @@ export class Image extends BaseEntity {
   @PrimaryColumn({
     type: 'bigint',
     unsigned: true,
-    nullable: false
+    nullable: false,
   })
   id: number;
 
@@ -22,7 +22,7 @@ export class Image extends BaseEntity {
   @Column({
     type: 'bigint',
     unsigned: true,
-    nullable: true
+    nullable: true,
   })
   date: number;
 

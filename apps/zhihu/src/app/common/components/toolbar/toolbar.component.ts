@@ -3,15 +3,16 @@ import { Router } from '@angular/router';
 import { ToolbarType } from '../../interfaces';
 
 @Component({
-  selector: 'app-toolbar',
+  selector: 'demo-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
 
   @Input() type: string = ToolbarType.custom;
   @Input() back = '..';
   @Input() disabled = false;
+  // eslint-disable-next-line @angular-eslint/no-output-rename
   @Output('search') searchEmitter = new EventEmitter<string>();
   @Output() valueEmitter = new EventEmitter<string>();
   @Input() value = '';
@@ -19,7 +20,5 @@ export class ToolbarComponent implements OnInit {
   constructor(
     public router: Router,
   ) { }
-
-  ngOnInit() { }
 
 }

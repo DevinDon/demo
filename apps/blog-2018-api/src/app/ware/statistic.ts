@@ -7,7 +7,7 @@ export const statistic: Middleware = async (c, next) => {
     who: (c.headers['x-forwarded-for'] as string || '').split(', ')[0] || c.ip || 'unknown',
     when: Date.now(),
     where: c.request.path.slice(0, 255),
-    what: c.method.slice(0, 32)
+    what: c.method.slice(0, 32),
   });
 };
 

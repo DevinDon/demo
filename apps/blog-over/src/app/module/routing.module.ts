@@ -21,18 +21,18 @@ export const routes: Route[] = [
   { path: 'image/:id', component: ImageComponent, data: { animation: '3' } },
   { path: 'question/:id', component: QuestionComponent, data: { animation: '3' } },
   { path: 'song/:id', component: SongComponent, data: { animation: '3' } },
-  { path: 'video/:id', component: VideoComponent, data: { animation: '3' } }
+  { path: 'video/:id', component: VideoComponent, data: { animation: '3' } },
 ];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
   ],
   exports: [
-    RouterModule
-  ]
+    RouterModule,
+  ],
 })
 export class RoutingModule { }
 

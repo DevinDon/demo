@@ -14,9 +14,9 @@ import { Motto } from '../other/response.model';
     trigger('motto', [
       state('done', style({ opacity: 1 })),
       state('change', style({ opacity: 0 })),
-      transition('* <=> *', animate(1000))
-    ])
-  ]
+      transition('* <=> *', animate(1000)),
+    ]),
+  ],
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     public api: ApiService,
-    public app: AppService
+    public app: AppService,
   ) { }
 
   ngOnInit() {
@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit, OnDestroy {
           () => {
             this.state = 'change';
             this.motto = this.mottos[Math.floor(Math.random() * this.mottos.length)];
-          }
-        )
+          },
+        ),
     );
   }
 

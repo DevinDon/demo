@@ -4,5 +4,5 @@ import POSTPATHS from './POST';
 
 export const paths: AllPaths = {
   GET: GETPATH,
-  POST: POSTPATHS
+  POST: POSTPATHS,
 };

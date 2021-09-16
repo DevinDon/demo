@@ -9,7 +9,7 @@ interface Category {
 @Component({
   selector: 'demo-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss']
+  styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent {
 
@@ -21,7 +21,7 @@ export class CategoryComponent {
       { image: 'assets/category/2.jpg', link: '/content/image', name: '意境' },
       { image: 'assets/category/3.jpg', link: '/content/song', name: '音乐' },
       { image: 'assets/category/4.jpg', link: '/content/video', name: '影视' },
-      { image: 'assets/category/5.jpg', link: '/content/question', name: '解惑' }
+      { image: 'assets/category/5.jpg', link: '/content/question', name: '解惑' },
     ];
   }
 

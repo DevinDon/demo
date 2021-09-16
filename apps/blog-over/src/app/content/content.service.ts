@@ -6,14 +6,14 @@ import { BaseResponse } from '../other/response.model';
 import { Content } from './content.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ContentService {
 
   public cache: { [index: number]: Content } = {};
 
   constructor(
-    public api: ApiService
+    public api: ApiService,
   ) { }
 
   getOneByID(id: number): Observable<BaseResponse<Content>> {

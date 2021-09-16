@@ -12,7 +12,7 @@ type RESPContent = Partial<Article>[];
 /** POST: Article[]. */
 export const articles: Middleware = async (c, next) => {
   const req: REQContent = {
-    amount: c.request.body.amount || 6
+    amount: c.request.body.amount || 6,
   };
   const results: RESPContent = await Article
     .createQueryBuilder()
@@ -28,13 +28,13 @@ export const articles: Middleware = async (c, next) => {
       date: Date.now(),
       summary: result.summary,
       text: result.text,
-      html: result.html
+      html: result.html,
     });
   }
   (c.body as Resp<RESPContent>) = {
     id: Date.now(),
     status: Boolean(results.length),
-    content: data
+    content: data,
   };
   await next();
 };

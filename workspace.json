@@ -490,6 +490,7 @@
           },
           "defaultConfiguration": "development",
           "options": {
+            "browserTarget": "tinyurl:build:development",
             "proxyConfig": "apps/tinyurl/proxy.config.json"
           }
         },
@@ -1017,36 +1018,6 @@
           "options": {
             "jestConfig": "apps/zhihu/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "zhihu-e2e": {
-      "root": "apps/zhihu-e2e",
-      "sourceRoot": "apps/zhihu-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/zhihu-e2e/cypress.json",
-            "devServerTarget": "zhihu:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "zhihu:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
-          "options": {
-            "lintFilePatterns": [
-              "apps/zhihu-e2e/**/*.{js,ts}"
-            ]
           }
         }
       }

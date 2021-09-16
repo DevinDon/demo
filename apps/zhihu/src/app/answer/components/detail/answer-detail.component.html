@@ -1,4 +1,5 @@
-<app-toolbar class="toolbar" type="action" [back]="back" [disabled]="!question"></app-toolbar>
+<demo-toolbar class="toolbar" type="action" [back]="back" [disabled]="!question">
+</demo-toolbar>
 
 <div class="container">
 
@@ -13,7 +14,7 @@
     </div>
   </ng-container>
   <ng-template #loadingQuestionTemplate>
-    <app-loading>正在加载中...</app-loading>
+    <demo-loading>正在加载中...</demo-loading>
   </ng-template>
 
   <ng-container *ngIf="answer; else loadingAnswerTemplate">
@@ -61,7 +62,7 @@
   </ng-container>
 
   <ng-template #loadingAnswerTemplate>
-    <app-loading [style.height]="'80vh'">正在加载回答...</app-loading>
+    <demo-loading [style.height]="'80vh'">正在加载回答...</demo-loading>
   </ng-template>
 
 </div>

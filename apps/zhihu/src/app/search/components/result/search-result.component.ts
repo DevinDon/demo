@@ -8,7 +8,7 @@ import { SearchApiService } from '../../services/search-api.service';
 import { SearchHistoryService } from '../../services/search-history.service';
 
 @Component({
-  selector: 'app-search-result',
+  selector: 'demo-search-result',
   templateUrl: './search-result.component.html',
   styleUrls: ['./search-result.component.scss'],
 })

@@ -6,7 +6,7 @@ import { Link, transform } from 'src/app/common/utils';
 import { QuestionApiService } from '../../services/api/question-api.service';
 
 @Component({
-  selector: 'app-question-detail',
+  selector: 'demo-question-detail',
   templateUrl: './question-detail.component.html',
   styleUrls: ['./question-detail.component.scss'],
 })

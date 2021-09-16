@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SearchResult } from 'src/app/search/interfaces';
 
 @Component({
-  selector: 'app-search-result-card',
+  selector: 'demo-search-result-card',
   templateUrl: './search-result-card.component.html',
   styleUrls: ['./search-result-card.component.scss'],
 })

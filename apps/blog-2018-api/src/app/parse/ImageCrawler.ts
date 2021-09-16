@@ -14,7 +14,7 @@ export class ImageCrawler {
    * @param id 图片编号.
    */
   private async getHTML(id: number): Promise<ImageNode> {
-    return new Promise<ImageNode>((rej) => {
+    return new Promise<ImageNode>(rej => {
       console.log(`正在读取第 ${id} 张图片的网站.`);
       request(`http://wufazhuce.com/one/${id}`, res => {
         const chunks: any[] = [];
@@ -25,7 +25,7 @@ export class ImageCrawler {
           const body = Buffer.concat(chunks);
           rej({
             id,
-            dom: new JSDOM(body.toString()).window.document
+            dom: new JSDOM(body.toString()).window.document,
           });
           console.log(`第 ${id} 张图片的网站读取完毕.`);
         });
@@ -34,7 +34,7 @@ export class ImageCrawler {
   }
 
   private async get(url: string): Promise<string> {
-    return new Promise<string>((rej) => {
+    return new Promise<string>(rej => {
       console.log(`开始加载图片, 网址: ${url}`);
       request(`${url}`, res => {
         const chunks: any[] = [];
@@ -45,7 +45,7 @@ export class ImageCrawler {
           console.log(`开始转码图片, 网址: ${url}`);
           const body = Buffer.concat(chunks);
           rej(body.toString('base64'));
-          console.log(`图片转码完毕.`);
+          console.log('图片转码完毕.');
         });
       }).end();
     });
@@ -58,7 +58,7 @@ export class ImageCrawler {
     const image: any = await this.get(link);
     const text: string = ((dom.querySelector('.one-cita') as Element).innerHTML || '').trim();
     const date: number = new Date(
-      `${((dom.querySelector('.dom') as Element).innerHTML || '1').trim()} ${((dom.querySelector('.may') as Element).innerHTML || 'Jan 2019').trim()}`
+      `${((dom.querySelector('.dom') as Element).innerHTML || '1').trim()} ${((dom.querySelector('.may') as Element).innerHTML || 'Jan 2019').trim()}`,
     ).getTime();
     console.log(`网站解析完毕, 编号: ${node.id}`);
     return {
@@ -66,7 +66,7 @@ export class ImageCrawler {
       link,
       image,
       text,
-      date
+      date,
     };
   }
 
@@ -80,7 +80,7 @@ export class ImageCrawler {
   }
 
   public async run(id = 1) {
-    console.log(`开始执行检索.`);
+    console.log('开始执行检索.');
     let currect = 0;
     const max = 10;
     for (let i = id; i < 2300; i++) {

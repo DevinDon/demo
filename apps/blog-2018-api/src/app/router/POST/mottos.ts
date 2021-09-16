@@ -12,7 +12,7 @@ type RESPContent = Partial<Motto>[];
 /** POST: Motto[]. */
 export const mottos: Middleware = async (c, next) => {
   const req: REQContent = {
-    amount: c.request.body.amount || 10
+    amount: c.request.body.amount || 10,
   };
   const results: RESPContent = await Motto
     .createQueryBuilder()
@@ -24,13 +24,13 @@ export const mottos: Middleware = async (c, next) => {
     data.push({
       id: result.id,
       author: result.author,
-      text: result.text
+      text: result.text,
     });
   }
   (c.body as Resp<RESPContent>) = {
     id: Date.now(),
     status: Boolean(data.length),
-    content: data
+    content: data,
   };
   await next();
 };

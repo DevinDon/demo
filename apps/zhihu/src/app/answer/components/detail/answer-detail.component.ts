@@ -7,7 +7,7 @@ import { QuestionApiService } from 'src/app/question/services/api/question-api.s
 import { AnswerApiService } from '../../services/api/answer-api.service';
 
 @Component({
-  selector: 'app-answer-detail',
+  selector: 'demo-answer-detail',
   templateUrl: './answer-detail.component.html',
   styleUrls: ['./answer-detail.component.scss'],
 })

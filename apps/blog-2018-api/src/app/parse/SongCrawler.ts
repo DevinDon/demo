@@ -15,7 +15,7 @@ export class SongCrawler extends Crawler {
     return {
       id: 123,
       url,
-      doc: new JSDOM(document).window.document
+      doc: new JSDOM(document).window.document,
     };
   }
 
@@ -26,27 +26,27 @@ export class SongCrawler extends Crawler {
     const mids: number[] = [];
     doc.querySelectorAll('li[mid]').forEach(
       v => mids.push(
-        Number(v.getAttribute('mid'))
-      )
+        Number(v.getAttribute('mid')),
+      ),
     );
     console.log(doc.querySelectorAll('li[mid]'));
     const titles: string[] = [];
     doc.querySelectorAll('a.js_song[title]').forEach(
       v => titles.push(
-        v.getAttribute('title') as string
-      )
+        v.getAttribute('title') as string,
+      ),
     );
     const artists: string[] = [];
     doc.querySelectorAll('div.songlist__artist').forEach(
       v => artists.push(
-        v.getAttribute('title') as string
-      )
+        v.getAttribute('title') as string,
+      ),
     );
     const albums: string[] = [];
     doc.querySelectorAll('div.album_name').forEach(
       v => albums.push(
-        (v.getAttribute('title') as string).trim()
-      )
+        (v.getAttribute('title') as string).trim(),
+      ),
     );
     const times: number[] = [];
     doc.querySelectorAll('div.songlist__time').forEach(
@@ -55,8 +55,8 @@ export class SongCrawler extends Crawler {
         .split('.')
         .reverse()
         .forEach(
-          (n, j) => times[i] = (times[i] || 0) + Number(n) * Math.pow(60, j)
-        )
+          (n, j) => times[i] = (times[i] || 0) + Number(n) * Math.pow(60, j),
+        ),
     );
     const result: Partial<Song>[] = [];
     for (let i = 0; i < mids.length; i++) {
@@ -65,7 +65,7 @@ export class SongCrawler extends Crawler {
         title: titles[i],
         artist: artists[i],
         album: albums[i],
-        time: times[i]
+        time: times[i],
       });
     }
     console.log(`文档解析完毕: ${data.url}`);

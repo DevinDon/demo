@@ -12,7 +12,7 @@ type RESPContent = Partial<Song>[];
 /** POST: Song[]. */
 export const songs: Middleware = async (c, next) => {
   const req: REQContent = {
-    amount: c.request.body.amount || 6
+    amount: c.request.body.amount || 6,
   };
   const results: RESPContent = await Song
     .createQueryBuilder()
@@ -26,13 +26,13 @@ export const songs: Middleware = async (c, next) => {
       title: result.title,
       artist: result.artist,
       album: result.album,
-      time: result.time
+      time: result.time,
     });
   }
   (c.body as Resp<RESPContent>) = {
     id: Date.now(),
     status: Boolean(results.length),
-    content: data
+    content: data,
   };
   await next();
 };

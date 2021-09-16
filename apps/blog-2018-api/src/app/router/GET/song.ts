@@ -11,13 +11,13 @@ type RESPContent = Partial<Song>;
 /** GET: Song. */
 export const song: Middleware = async (c, next) => {
   const req: REQContent = {
-    id: +(c.query.id as string)
+    id: +(c.query.id as string),
   };
   const result = await Song.findOne(req.id);
   (c.body as Resp<RESPContent>) = {
     id: Date.now(),
     status: Boolean(result),
-    content: result || {}
+    content: result || {},
   };
   await next();
 };

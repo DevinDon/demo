@@ -12,11 +12,11 @@ describe('NavComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         NavComponent,
-        MatIconStubComponent
+        MatIconStubComponent,
       ],
       imports: [
-        RouterTestingModule
-      ]
+        RouterTestingModule,
+      ],
     })
       .compileComponents();
   }));

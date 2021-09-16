@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
@@ -7,11 +7,11 @@ import { sleep } from 'src/app/common/utils';
 import { QuestionApiService } from '../../services/api/question-api.service';
 
 @Component({
-  selector: 'app-question-publish',
+  selector: 'demo-question-publish',
   templateUrl: './question-publish.component.html',
   styleUrls: ['./question-publish.component.scss'],
 })
-export class QuestionPublishComponent implements OnInit {
+export class QuestionPublishComponent {
 
   status = {
     publishing: LoadingType.init,
@@ -25,8 +25,6 @@ export class QuestionPublishComponent implements OnInit {
     private router: Router,
     private bar: MatSnackBar,
   ) { }
-
-  ngOnInit() { }
 
   isInvalidTitle() {
     const last = this.title.trim().slice(-1);

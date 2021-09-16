@@ -11,7 +11,7 @@ interface Route {
 @Component({
   selector: 'demo-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
 
@@ -21,11 +21,11 @@ export class NavComponent {
     { icon: 'public', link: '/', text: '首页' },
     { icon: 'book', link: '/content', text: '阅读' },
     { icon: 'loyalty', link: '/category', text: '分类' },
-    { icon: 'info', link: '/about', text: '关于' }
+    { icon: 'info', link: '/about', text: '关于' },
   ];
 
   constructor(
-    public app: AppService
+    public app: AppService,
   ) { }
 
 }

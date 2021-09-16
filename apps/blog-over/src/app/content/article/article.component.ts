@@ -19,9 +19,9 @@ import { ContentService } from '../content.service';
       state('void', style({ opacity: 0 })),
       state('false', style({ opacity: 0 })),
       state('true', style({ opacity: 1 })),
-      transition('* <=> *', [animate(300)])
-    ])
-  ]
+      transition('* <=> *', [animate(300)]),
+    ]),
+  ],
 })
 export class ArticleComponent implements OnInit, OnDestroy {
 
@@ -32,7 +32,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   constructor(
     public app: AppService,
     public route: ActivatedRoute,
-    public service: ContentService
+    public service: ContentService,
   ) { }
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
       this.route.paramMap
         .pipe(
           tap(() => this.article = undefined as any),
-          delay(1000)
+          delay(1000),
         )
         .subscribe(v => {
           const id = +(v.get('id') || 0);
@@ -50,13 +50,13 @@ export class ArticleComponent implements OnInit, OnDestroy {
                 this.article = result.content as Content;
                 this.article.content = Marked(
                   this.article.content,
-                  { highlight: (code, language) => `<span class="language">${language}</span>` + highlightAuto(code).value }
+                  { highlight: (code, language) => `<span class="language">${language}</span>` + highlightAuto(code).value },
                 );
               } else {
                 this.app.openBar('无法获取文章，请稍后重试。');
               }
             });
-        })
+        }),
     );
   }
 

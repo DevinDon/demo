@@ -17,7 +17,7 @@ import { WaveComponent } from './wave/wave.component';
 
 @NgModule({
   bootstrap: [
-    AppComponent
+    AppComponent,
   ],
   declarations: [
     AppComponent,
@@ -26,7 +26,7 @@ import { WaveComponent } from './wave/wave.component';
     HomeComponent,
     CategoryComponent,
     WaveComponent,
-    AboutContactComponent
+    AboutContactComponent,
   ],
   entryComponents: [
     AboutContactComponent,
@@ -35,12 +35,12 @@ import { WaveComponent } from './wave/wave.component';
     SharedModule,
     RoutingModule,
     MaterialModule,
-    ContentModule
+    ContentModule,
   ],
   providers: [
     AppService,
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
-    { provide: RouteReuseStrategy, useClass: RouteReuseHandler }
-  ]
+    { provide: RouteReuseStrategy, useClass: RouteReuseHandler },
+  ],
 })
 export class AppModule { }

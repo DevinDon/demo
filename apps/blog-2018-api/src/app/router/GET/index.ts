@@ -16,15 +16,15 @@ const index: Middleware = async (c, next) => {
       ip: c.request.ip,
       ips: c.request.ips,
       host: c.request.host,
-      realip: (c.headers['x-forwarded-for'] as string || '').split(', ')[0] || c.ip || 'unknown'
+      realip: (c.headers['x-forwarded-for'] as string || '').split(', ')[0] || c.ip || 'unknown',
     },
     times: {
       today: await Statistic
         .createQueryBuilder()
         .where('`when` > :today', { today: new Date(new Date().toLocaleDateString()).getTime() })
         .getCount(),
-      total: await Statistic.count()
-    }
+      total: await Statistic.count(),
+    },
   };
   await next();
 };
@@ -44,37 +44,37 @@ const notFound: Middleware = async (c, next) => {
 
 /** All GET paths. */
 export const GETPATH: RouterPaths = {
-  'index': {
+  index: {
     path: '/',
     ware: index,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   },
-  'article': {
+  article: {
     path: '/article',
     ware: article,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   },
-  'image': {
+  image: {
     path: '/image',
     ware: image,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   },
-  'motto': {
+  motto: {
     path: '/motto',
     ware: motto,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   },
-  'song': {
+  song: {
     path: '/song',
     ware: song,
-    cors: allowAllCORS
+    cors: allowAllCORS,
   },
-  '404': {
+  404: {
     path: '**',
     ware: notFound,
     cors: allowAllCORS,
-    withoutPrefix: true
-  }
+    withoutPrefix: true,
+  },
 };
 
 export default GETPATH;

@@ -3,14 +3,14 @@ import { Injectable, isDevMode } from '@angular/core';
 import { BaseResponse } from './other/response.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
 
   public static HOST = 'https://blog.don.red/api';
 
   constructor(
-    public http: HttpClient
+    public http: HttpClient,
   ) {
     if (isDevMode()) {
       ApiService.HOST = 'http://localhost:8080';

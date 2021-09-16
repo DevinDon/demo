@@ -13,12 +13,12 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
-        MatIconStubComponent
+        MatIconStubComponent,
       ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
-      providers: [{ provide: AppService, useValue: appServiceStub }]
+      providers: [{ provide: AppService, useValue: appServiceStub }],
     })
       .compileComponents();
   }));

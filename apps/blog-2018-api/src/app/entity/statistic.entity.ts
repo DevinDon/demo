@@ -5,35 +5,35 @@ export class Statistic extends BaseEntity {
 
   @PrimaryGeneratedColumn({
     type: 'bigint',
-    unsigned: true
+    unsigned: true,
   })
   id: number;
 
   @Column({
     type: 'char',
     length: 128,
-    nullable: false
+    nullable: false,
   })
   who: string;
 
   @Column({
     type: 'bigint',
     unsigned: true,
-    nullable: false
+    nullable: false,
   })
   when: number;
 
   @Column({
     type: 'char',
     length: 255,
-    nullable: false
+    nullable: false,
   })
   where: string;
 
   @Column({
     type: 'char',
     length: 32,
-    nullable: false
+    nullable: false,
   })
   what: string;
 

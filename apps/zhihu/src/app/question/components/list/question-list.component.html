@@ -1,10 +1,11 @@
-<app-toolbar class="toolbar" type="home"></app-toolbar>
+<demo-toolbar class="toolbar" type="home">
+</demo-toolbar>
 
 <div class="container" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="50"
   (scrolled)="loadMore()">
 
   <ng-container *ngIf="questions === undefined">
-    <app-loading [style.height]="'100vh'">正在加载问题列表...</app-loading>
+    <demo-loading [style.height]="'100vh'">正在加载问题列表...</demo-loading>
   </ng-container>
 
   <ng-container *ngIf="questions && questions.length === 0">
@@ -12,12 +13,13 @@
   </ng-container>
 
   <ng-container *ngIf="questions && questions.length > 0">
-    <app-question-card *ngFor="let question of questions; trackBy: trackByID" [question]="question"
-      [routerLink]="[ '/question', question.id ]"></app-question-card>
+    <demo-question-card *ngFor="let question of questions; trackBy: trackByID" [question]="question"
+      [routerLink]="[ '/question', question.id ]">
+    </demo-question-card>
   </ng-container>
 
   <ng-container *ngIf="status.loading">
-    <app-loading size="mini" direction="row">加载中...</app-loading>
+    <demo-loading size="mini" direction="row">加载中...</demo-loading>
   </ng-container>
 
   <button mat-mini-fab class="publish" color="primary" [routerLink]="[ '/question/new' ]" matTooltip="点击发布提问">

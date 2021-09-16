@@ -4,7 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'demo-about-contact',
   templateUrl: './about-contact.component.html',
-  styleUrls: ['./about-contact.component.scss']
+  styleUrls: ['./about-contact.component.scss'],
 })
 export class AboutContactComponent {
 
@@ -15,7 +15,7 @@ export class AboutContactComponent {
   public title = '扫一扫了解更多';
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public name: string
+    @Inject(MAT_DIALOG_DATA) public name: string,
   ) {
     switch (name) {
       case 'github':
