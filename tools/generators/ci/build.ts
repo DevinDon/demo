@@ -1,4 +1,4 @@
-import { buildAllImages, getAppList, loginToDocker } from './libs';
+import { buildAllImages, getAppList, loginToDocker, print } from './libs';
 
 (async () => {
 
