@@ -9,7 +9,7 @@ import { $, cd } from 'zx';
   console.log('$ALIYUN_REGISTRY:', process.env.ALIYUN_REGISTRY);
   console.log('$ALIYUN_USERNAME:', process.env.ALIYUN_USERNAME);
   console.log('$ALIYUN_PASSWORD:', process.env.ALIYUN_PASSWORD);
-  console.log('$SET_DB_HOST', process.env.WEBBO_API_SET_DB_HOST);
+  console.log('$WEIBO_API_SET_DB_HOST', process.env.WEIBO_API_SET_DB_HOST);
 })();
 
 export const print = async (output: ProcessOutput) => {
