@@ -2,6 +2,8 @@ import { readdirSync } from 'fs';
 import { ProcessOutput } from 'zx';
 import { $, cd } from 'zx';
 
+process.env.BUILD_DIR = '.';
+
 export const getAppList = () =>
   readdirSync(`${process.env.BUILD_DIR}/dist/apps/`);
 
