@@ -2,6 +2,16 @@ import { readdirSync } from 'fs';
 import { ProcessOutput } from 'zx';
 import { $, cd } from 'zx';
 
+(async () => {
+  console.log('List all env:');
+  console.log('$BUILD_DIR:', process.env.BUILD_DIR);
+  console.log('$BUILD_NUMBER:', process.env.BUILD_NUMBER);
+  console.log('$ALIYUN_REGISTRY:', process.env.ALIYUN_REGISTRY);
+  console.log('$ALIYUN_USERNAME:', process.env.ALIYUN_USERNAME);
+  console.log('$ALIYUN_PASSWORD:', process.env.ALIYUN_PASSWORD);
+  console.log('$SET_DB_HOST', process.env.WEBBO_API_SET_DB_HOST);
+});
+
 export const print = async (output: ProcessOutput) => {
   output.stdout && console.log(output.stdout);
   output.stderr && console.error(output.stderr);

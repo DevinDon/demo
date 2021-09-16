@@ -5,8 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build:hot": "nx build tinyurl && nx build blog-over && rm -rf dist",
-    "build": "NODE_ENV=production nx run-many --target=build --all=true --parallel=false --prod",
-    "build:affected": "NODE_ENV=production nx affected --target=build --base=main --head=release --parallel=false --prod",
+    "build": "NODE_ENV=production nx run-many --target=build --all=true --parallel=true --maxParallel=4 --prod",
+    "build:affected": "NODE_ENV=production nx affected --target=build --base=main --head=release --parallel=true --maxParallel=4 --prod",
     "images:build": "nx workspace-schematic ci build",
     "images:push": "nx workspace-schematic ci push",
     "test": "nx test",
