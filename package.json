@@ -9,8 +9,7 @@
     "images:build": "nx workspace-schematic ci build",
     "images:push": "nx workspace-schematic ci push",
     "test": "nx test",
-    "ci-prepare": "npm i --unsafe-perm --force",
-    "postinstall": "ngcc --properties es2015 browser module main"
+    "ci-prepare": "npm i -g pnpm && pnpm i"
   },
   "private": true,
   "dependencies": {
