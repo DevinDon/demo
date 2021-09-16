@@ -49,7 +49,5 @@ export const print = async (output: ProcessOutput) => {
   output.stderr && console.error(output.stderr);
 };
 
-export const installDocker = async () => {
+export const installDocker = async () =>
   $`wget -qO- https://get.docker.com/ | sh`.then(print);
-  $`systemctl enable docker --now`.then(print);
-}
