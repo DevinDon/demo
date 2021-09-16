@@ -5,7 +5,7 @@ import { HostCollection, HostEntity } from './host.entity';
 // create, remove, modify, take, search
 // one, more
 
-@View('hosts')
+@View('api/hosts')
 export class HostsView extends BaseView {
 
   private entity: HostEntity;

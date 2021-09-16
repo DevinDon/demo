@@ -6,7 +6,7 @@ import { LinkCollection, LinkEntity } from './link.entity';
 // create, remove, modify, take, search
 // one, more
 
-@View('links')
+@View('api/links')
 @Handler(UserAuthHandler)
 export class LinksView extends BaseView {
 
