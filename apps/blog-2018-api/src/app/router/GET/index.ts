@@ -37,7 +37,7 @@ const notFound: Middleware = async (c, next) => {
       c.body = files.index;
       c.status = 200;
     } else {
-      c.redirect('/');
+      c.redirect('/api');
     }
   }
 };
@@ -68,12 +68,6 @@ export const GETPATH: RouterPaths = {
     path: '/song',
     ware: song,
     cors: allowAllCORS,
-  },
-  404: {
-    path: '**',
-    ware: notFound,
-    cors: allowAllCORS,
-    withoutPrefix: true,
   },
 };
 
