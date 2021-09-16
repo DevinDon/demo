@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "ci",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "description": "CI Action, switch 'build' or 'push'.",
+      "enum": [
+        "build",
+        "push"
+      ],
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "Which action would you like to do?"
+    }
+  },
+  "required": [
+    "action"
+  ]
+}

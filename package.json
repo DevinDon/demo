@@ -5,11 +5,11 @@
   "scripts": {
     "start": "nx serve",
     "build": "NODE_ENV=production nx run-many --target=build --all=true --parallel=true --maxParallel=4 --prod",
-    "build:blog-2017": "NODE_ENV=production nx build blog-2017 --prod",
-    "build:blog-2018": "NODE_ENV=production nx build blog-2018 --prod",
-    "build:blog-over": "NODE_ENV=production nx build blog-over --prod",
+    "build:affected": "NODE_ENV=production nx affected --target=build --base=main --head=release --parallel --maxParallel=4 --prod",
+    "images:build": "nx workspace-schematic ci build",
+    "images:push": "nx workspace-schematic ci push",
     "test": "nx test",
-    "postinstall": "ngcc --properties es2015 browser module main"
+    "ci-prepare": "npm i -g pnpm && pnpm i"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +48,7 @@
     "@nrwl/angular": "^12.9.0",
     "@nrwl/cli": "12.9.0",
     "@nrwl/cypress": "12.9.0",
+    "@nrwl/devkit": "12.9.0",
     "@nrwl/eslint-plugin-nx": "12.9.0",
     "@nrwl/jest": "12.9.0",
     "@nrwl/linter": "12.9.0",
@@ -118,6 +119,7 @@
     "webpack-dev-server": "4.0.0-rc.0",
     "webpack-merge": "^5.8.0",
     "webpack-node-externals": "^3.0.0",
-    "webpack-sources": "^3.0.2"
+    "webpack-sources": "^3.0.2",
+    "zx": "^4.2.0"
   }
 }
