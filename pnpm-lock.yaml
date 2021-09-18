@@ -12222,7 +12222,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       hosted-git-info: 4.0.2
-      semver: 7.3.5
+      semver: 7.3.4
       validate-npm-package-name: 3.0.0
     dev: true
 
