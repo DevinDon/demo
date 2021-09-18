@@ -35,7 +35,7 @@ export class HostEntity extends MongoEntity<Host> implements Host {
     return { list: await this.collection.aggregate([{ $sample: { size: take } }]).toArray() };
   }
 
-  async insertOne(host: Host) {
+  async insertOne(host: Omit<Host, '_id'>) {
     const id = await this.collection
       .insertOne(host)
       .then(result => result.insertedId);

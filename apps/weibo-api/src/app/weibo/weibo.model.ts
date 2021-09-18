@@ -1,8 +1,6 @@
-import { ObjectId } from 'mongodb';
+import { BaseModel } from '@rester/orm';
 
-export interface Weibo {
-
-  _id: ObjectId;
+export interface Weibo extends BaseModel {
 
   id: number;
 

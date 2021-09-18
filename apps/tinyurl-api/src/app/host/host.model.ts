@@ -1,4 +1,6 @@
-export interface Host {
+import { BaseModel } from '@rester/orm';
+
+export interface Host extends BaseModel {
 
   domain: string;
 

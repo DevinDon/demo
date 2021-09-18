@@ -1,4 +1,6 @@
-export interface Link {
+import { BaseModel } from '@rester/orm';
+
+export interface Link extends BaseModel {
 
   /** 短网址 ID */
   id: string;

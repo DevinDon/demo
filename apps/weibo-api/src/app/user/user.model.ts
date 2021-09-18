@@ -1,7 +1,6 @@
-import { ObjectId } from 'mongodb';
+import { BaseModel } from '@rester/orm';
 
-export interface User {
-  _id: ObjectId;
+export interface User extends BaseModel {
   id: number;
   idstr: string;
   class: number;

@@ -35,7 +35,7 @@ export class LinkEntity extends MongoEntity<Link> implements Link {
     return { list: await this.collection.aggregate([{ $sample: { size: take } }]).toArray() };
   }
 
-  async insertOne(link: Link) {
+  async insertOne(link: Omit<Link, '_id'>) {
     const id = await this.collection
       .insertOne(link)
       .then(result => result.insertedId);

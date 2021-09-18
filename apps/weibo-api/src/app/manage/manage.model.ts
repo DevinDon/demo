@@ -1,4 +1,6 @@
-export interface Manage {
+import { BaseModel } from '@rester/orm';
+
+export interface Manage extends BaseModel {
 
   content?: string;
 

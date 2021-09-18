@@ -16,14 +16,13 @@ const isProd = () => process.env.NODE_ENV === 'production';
 export class WeiboView extends BaseView {
 
   private entity: WeiboEntity;
+  private readonly HTML: any = {};
 
   async init() {
     this.entity = getEntity(WeiboEntity);
     this.HTML.index = isProd() ? 'assets/index.html' : 'apps/weibo-api/src/assets/index.html';
     this.HTML.login = isProd() ? 'assets/login.html' : 'apps/weibo-api/src/resources/login.html';
   }
-
-  private readonly HTML: any = {};
 
   @GET()
   async index() {

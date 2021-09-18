@@ -1,6 +1,7 @@
+import { BaseModel } from '@rester/orm';
 import { IncomingHttpHeaders } from 'http';
 
-export interface Access {
+export interface Access extends BaseModel {
 
   method: string;
 

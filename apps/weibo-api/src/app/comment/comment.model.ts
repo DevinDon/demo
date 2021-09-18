@@ -1,9 +1,7 @@
-import { ObjectId } from 'mongodb';
+import { BaseModel } from '@rester/orm';
 import { User } from '../user/user.model';
 
-export interface Comment {
-
-  _id: ObjectId;
+export interface Comment extends BaseModel {
 
   id: number;
 

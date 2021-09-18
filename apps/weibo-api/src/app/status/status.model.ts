@@ -1,9 +1,9 @@
-import { ObjectId } from 'mongodb';
+import { BaseModel } from '@rester/orm';
 import { User } from '../user/user.model';
 
-export interface Status {
+export interface Status extends BaseModel {
 
-  _id: ObjectId;
+  description?: string;
 
 }
 
