@@ -205,12 +205,12 @@ export class StatusEntity extends MongoEntity<Status> implements Status {
     return { list: await this.collection.aggregate([{ $sample: { size: take } }]).toArray() };
   }
 
-  async insertStatus({ comment, user }: ParamInsertStatus) {
+  async insertStatus({ text, user }: ParamInsertStatus) {
     const id = Date.now() + Math.random().toString().slice(2, 4);
-    return this.collection
+    await this.collection
       .insertOne({
         id: +id,
-        text: comment,
+        text,
         user,
         created_at: new Date().toString(),
         source: '<a href="http://app.weibo.com/t/feed/6vtZb0" rel="nofollow">微博 weibo.com</a>',
@@ -219,16 +219,17 @@ export class StatusEntity extends MongoEntity<Status> implements Status {
         attitudes_count: +Math.random().toString().slice(2, 5),
         comments_count: 0,
         idstr: id,
-        textLength: comment.length,
+        textLength: text.length,
         userType: -100,
       } as any);
+    return await this.collection.findOne({ id: +id });
   }
 
   async selectStatusesWithHomeTimeline({ skip, take: limit }: PageParam) {
     // 获取最新的微博
     const cursor = this.collection
       .find()
-      .sort({ created_at: -1 })
+      .sort({ _id: -1 })
       .skip(skip)
       .limit(limit);
     const statuses: Status[] = [];

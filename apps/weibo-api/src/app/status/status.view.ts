@@ -1,4 +1,4 @@
-import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredParams, View } from '@rester/core';
+import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredAtLeastOneParam, requiredParams, View } from '@rester/core';
 import { getEntity } from '@rester/orm';
 import { UserAuthHandler } from '../common/handlers';
 import { User } from '../user/user.model';
@@ -21,10 +21,10 @@ export class StatusView extends BaseView {
   @POST('create.json')
   async create(
     @HandlerZone() { user }: { user: User },
-    @RequestBody() { comment }: { comment: string; } = {} as any,
+    @RequestBody() { text }: { text: string; } = {} as any,
   ) {
-    requiredParams(comment);
-    return this.entity.insertStatus({ comment: comment.slice(0, 140), user });
+    requiredParams({ text });
+    return this.entity.insertStatus({ text: text.slice(0, 140), user });
   }
 
   @GET('home_timeline.json')

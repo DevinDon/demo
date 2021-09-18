@@ -1,5 +1,5 @@
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import { Avatar, Button, Card, Col, Input, List, Modal, Row } from 'antd';
+import { Avatar, Button, Card, Col, Input, List, message, Modal, Row } from 'antd';
 import moment from 'moment';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useMappedState } from 'redux-react-hook';
@@ -30,6 +30,10 @@ export const CommentsList = ({ id }) => {
   );
 
   const handleSendComment = () => {
+    if (!getUid()) {
+      message.error('请先点击左上角登录');
+      return;
+    }
     let param = new URLSearchParams();
     param.append('id', id);
     param.append('comment', value);

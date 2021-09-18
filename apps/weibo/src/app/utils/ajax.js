@@ -11,26 +11,12 @@ function getAxiosInstance(options) {
 }
 
 function makeGet() {
-  return function (url, option) {
-    const instance = getAxiosInstance(option);
-    return instance({
-      url,
-      method: 'get',
-      ...option
-    });
-  };
+  return getAxiosInstance().get;
 }
 
 
 function makePost() {
-  return function (url, option) {
-    const instance = getAxiosInstance(option);
-    return instance({
-      url,
-      method: 'post',
-      ...option
-    });
-  };
+  return getAxiosInstance().post;
 }
 
 

@@ -1,5 +1,5 @@
 import * as api from '../api/timeline';
-import { GET_HOME_TIMELINE, GET_PUBLIC_TIMELINE, SET_CURRENT_POST } from '../constants/actions';
+import { ADD_POST, GET_HOME_TIMELINE, GET_PUBLIC_TIMELINE, SET_CURRENT_POST } from '../constants/actions';
 import { resetComments } from './comments';
 
 export function getHomeTimeline(params = {}) {
@@ -21,6 +21,17 @@ export function getPublicTimeline(params = {}) {
       payload: result,
       params,
     });
+  };
+}
+
+export function addPost(body = {}) {
+  return async dispatch => {
+    const result = await api.addPost(body);
+    dispatch({
+      type: ADD_POST,
+      payload: { status: result },
+      body,
+    })
   };
 }
 

@@ -143,6 +143,6 @@ export interface PageParam {
 }
 
 export interface ParamInsertStatus {
-  comment: string;
+  text: string;
   user: User;
 }

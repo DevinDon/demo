@@ -5,3 +5,4 @@ export const GET_COMMENTS = 'comments/getComments';
 export const RESET_COMMENTS = 'comments/resetComments';
 export const ADD_COMMENT = 'comments/addComment';
 export const REMOVE_COMMENT = 'comments/removeComment';
+export const ADD_POST = 'timeline/addPost';

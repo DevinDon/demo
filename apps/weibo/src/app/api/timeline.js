@@ -12,3 +12,7 @@ export function getPublicTimeline(params) {
 export function getPost(params) {
   return ajax.get(`${API}/2/statuses/show.json`, { params });
 }
+
+export function addPost(body) {
+  return ajax.post(`${API}/2/statuses/create.json`, body, { headers: { 'Content-Type': 'application/json' } });
+}
