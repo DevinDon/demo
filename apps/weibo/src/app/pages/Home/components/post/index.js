@@ -4,7 +4,6 @@ import moment from 'moment';
 import { useDispatch } from 'redux-react-hook';
 import notFoundSvg from '../../../../../assets/404.svg';
 import { setCurrentPost } from '../../../../actions/timeline';
-import { APP_URI } from '../../../../constants';
 import styles from './index.module.scss';
 
 export const getPostTitle = (
@@ -43,11 +42,7 @@ const Post = ({
 }) => {
   const dispatch = useDispatch();
   const handleClickComment = () => {
-    if (!comments_count) {
-      window.location.href = `${APP_URI}/comments/${id}`;
-    } else {
-      dispatch(setCurrentPost({ id: isCurrent ? null : id }));
-    }
+    dispatch(setCurrentPost({ id: isCurrent ? null : id }));
   };
 
   return (
