@@ -1,5 +1,5 @@
 import { LikeOutlined, MessageOutlined, RetweetOutlined } from '@ant-design/icons';
-import { Card } from 'antd';
+import { Card, message } from 'antd';
 import moment from 'moment';
 import { useDispatch } from 'redux-react-hook';
 import notFoundSvg from '../../../../../assets/404.svg';
@@ -41,6 +41,12 @@ const Post = ({
   isCurrent,
 }) => {
   const dispatch = useDispatch();
+  const handleClickRetweet = () => {
+    message.info('暂不支持转发操作');
+  };
+  const handleClickLike = () => {
+    message.info('暂不支持点赞操作');
+  };
   const handleClickComment = () => {
     dispatch(setCurrentPost({ id: isCurrent ? null : id }));
   };
@@ -59,15 +65,15 @@ const Post = ({
         )
       }
       actions={type ? [] : [
-        <div key="retweet">
+        <div key="retweet" onClick={handleClickRetweet}>
           <RetweetOutlined />
           <span> {reposts_count || ''}</span>
         </div>,
-        <div key="like">
+        <div key="like" onClick={handleClickLike}>
           <LikeOutlined />
           <span> {attitudes_count || ''}</span>
         </div>,
-        <div onClick={handleClickComment} key="message">
+        <div key="message" onClick={handleClickComment} >
           <MessageOutlined />
           <span> {comments_count || ''}</span>
         </div>,

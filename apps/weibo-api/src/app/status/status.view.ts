@@ -1,4 +1,4 @@
-import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredAtLeastOneParam, requiredParams, View } from '@rester/core';
+import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredAtLeastOneParam, requiredInRange, requiredParams, View } from '@rester/core';
 import { getEntity } from '@rester/orm';
 import { UserAuthHandler } from '../common/handlers';
 import { User } from '../user/user.model';
@@ -24,6 +24,7 @@ export class StatusView extends BaseView {
     @RequestBody() { text }: { text: string; } = {} as any,
   ) {
     requiredParams({ text });
+    requiredInRange({ min: 1, max: 140, value: text.length });
     return this.entity.insertStatus({ text: text.slice(0, 140), user });
   }
 

@@ -29,11 +29,13 @@ export const CommentsList = ({ id }) => {
     </div>
   );
 
-  const handleSendComment = () => {
+  const handleSendComment = (e) => {
+    e.preventDefault();
     if (!getUid()) {
       message.error('请先点击左上角登录');
       return;
     }
+    message.loading('评论发送中，请稍候');
     let param = new URLSearchParams();
     param.append('id', id);
     param.append('comment', value);
@@ -45,6 +47,7 @@ export const CommentsList = ({ id }) => {
     e.preventDefault();
     let param = new URLSearchParams();
     param.append('cid', id);
+    message.loading('删除确认中，请稍候');
     confirm({
       title: '警告',
       icon: <ExclamationCircleOutlined />,
@@ -68,6 +71,7 @@ export const CommentsList = ({ id }) => {
           <Button
             onClick={handleSendComment}
             type="primary"
+            disabled={!value}
           >
             评论
           </Button>

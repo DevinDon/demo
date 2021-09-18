@@ -1,4 +1,4 @@
-import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredParams, View } from '@rester/core';
+import { BaseView, GET, Handler, HandlerZone, PathQuery, POST, RequestBody, requiredInRange, requiredParams, View } from '@rester/core';
 import { getEntity, Pagination } from '@rester/orm';
 import { UserAuthHandler } from '../common/handlers';
 import { User } from '../user/user.model';
@@ -53,6 +53,7 @@ export class CommentsView extends BaseView {
     @RequestBody() { id, comment }: { id: number; comment: string; } = {} as any,
   ) {
     requiredParams({ id, comment });
+    requiredInRange({ min: 1, max: 140, value: comment.length });
     return this.entity.insertCommentByStatusID({ id: +id, comment: comment.slice(0, 140), user });
   }
 
@@ -63,6 +64,7 @@ export class CommentsView extends BaseView {
     @RequestBody() { id, cid, comment }: { id: number; cid: number; comment: string; } = {} as any,
   ) {
     requiredParams({ id, cid, comment });
+    requiredInRange({ min: 1, max: 140, value: comment.length });
     return this.entity.insertCommentByCommentID({
       id: +id,
       cid: +cid,

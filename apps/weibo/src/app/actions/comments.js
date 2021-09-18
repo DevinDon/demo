@@ -16,7 +16,7 @@ export function createComment(params = {}, isFirst) {
         }
       }
     } catch (e) {
-      message.error('请先点击左上角登录');
+      message.error('评论失败，请检查网络连接');
     }
   };
 }
