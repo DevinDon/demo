@@ -32,11 +32,11 @@ specifiers:
   '@nrwl/web': ^12.9.0
   '@nrwl/workspace': 12.9.0
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.0-rc.2
-  '@rester/core': ^0.18.5
-  '@rester/logger': ^0.18.5
-  '@rester/nx': ^0.18.5
-  '@rester/orm': ^0.18.5
-  '@rester/queue': ^0.18.5
+  '@rester/core': ^0.18.6
+  '@rester/logger': ^0.18.6
+  '@rester/nx': ^0.18.6
+  '@rester/orm': ^0.18.6
+  '@rester/queue': ^0.18.6
   '@testing-library/react': 11.2.6
   '@testing-library/react-hooks': 7.0.1
   '@types/animejs': '2'
@@ -117,10 +117,10 @@ dependencies:
   '@angular/platform-browser-dynamic': 12.2.6_e6c3b21acc09bb619517ce82a754c7be
   '@angular/router': 12.2.6_200e0485b3e1632cc3e429eac592c9a3
   '@nrwl/node': 12.9.0_prettier@2.4.1+typescript@4.3.5
-  '@rester/core': 0.18.5_1c7c62ead73e05f2ebb7355ac45b9abb
-  '@rester/logger': 0.18.5
-  '@rester/orm': 0.18.5_mongodb@4.1.2
-  '@rester/queue': 0.18.5
+  '@rester/core': 0.18.6_212ee107dca779e55f489a72e1c83425
+  '@rester/logger': 0.18.6
+  '@rester/orm': 0.18.6_mongodb@4.1.2
+  '@rester/queue': 0.18.6
   core-js: 3.17.3
   cross-fetch: 3.1.4
   react: 17.0.2
@@ -153,7 +153,7 @@ devDependencies:
   '@nrwl/web': 12.9.0_d3c3451fdc9bc88e5910459f3a81c089
   '@nrwl/workspace': 12.9.0_prettier@2.4.1
   '@pmmmwh/react-refresh-webpack-plugin': 0.5.0-rc.2_1c157d0e2a9fdc96509e0d48c80a1085
-  '@rester/nx': 0.18.5
+  '@rester/nx': 0.18.6
   '@testing-library/react': 11.2.6_react-dom@17.0.2+react@17.0.2
   '@testing-library/react-hooks': 7.0.1_react-dom@17.0.2+react@17.0.2
   '@types/animejs': 2.0.2
@@ -4007,42 +4007,42 @@ packages:
       webpack-dev-server: 4.0.0-rc.0_webpack@5.53.0
     dev: true
 
-  /@rester/core/0.18.5_1c7c62ead73e05f2ebb7355ac45b9abb:
-    resolution: {integrity: sha512-arWH4h3LSbJkg3P1V5G1OCxHUztgRalQfLISHpg8Wc3ugWntEYGsmKhviNnERu+spO7c7A9Xia6lv1kDE4urxg==}
+  /@rester/core/0.18.6_212ee107dca779e55f489a72e1c83425:
+    resolution: {integrity: sha512-TyYn+l0KuiFzVpgQCbo4Vbr6HLes60o5rTdAUX6oIIctKw1p3GLyo1SvsOdtggSt0kR9BLBr6g3/1ZMG0ryZXg==}
     peerDependencies:
-      '@rester/logger': ^0.18.5
-      '@rester/orm': ^0.18.5
+      '@rester/logger': ^0.18.6
+      '@rester/orm': ^0.18.6
     dependencies:
-      '@rester/logger': 0.18.5
-      '@rester/orm': 0.18.5_mongodb@4.1.2
+      '@rester/logger': 0.18.6
+      '@rester/orm': 0.18.6_mongodb@4.1.2
       mime-types: 2.1.32
       mongodb: 4.1.2
       reflect-metadata: 0.1.13
       yaml: 2.0.0-8
     dev: false
 
-  /@rester/logger/0.18.5:
-    resolution: {integrity: sha512-2P9/DXGs4NCWytPZjQitvq5gvDi8q3slOLI5jd9M2ut+5SxsKc7bPRlKJCLquUiEWGhLqz3niBhXs/JdiGIMmw==}
+  /@rester/logger/0.18.6:
+    resolution: {integrity: sha512-RfPnLm4i4/C6MiKcWGZ4zFjvEQKCK+msmrUt38UWMbEYITsr5U12jn9Sm/B4P/QbN7rEIE4N2htOhcEphtdyag==}
     dev: false
 
-  /@rester/nx/0.18.5:
-    resolution: {integrity: sha512-Mk+NRtVhdaNCYX7Ekvvm+uvMAGgtpXgzKfDNtnTIdhDegVu/SM3JLC8rdKhpjJ0wIJeJ/LSsGR+gKgoVpaoPeA==}
+  /@rester/nx/0.18.6:
+    resolution: {integrity: sha512-P1L+Tc6Uh0eglmaKGUAXpvx0RIkVJ6orc1bFzmprPFYwbF0myxLZFS10/X22g3YwmRp36oC3fTvbTiiBGaCZ3w==}
     dev: true
 
-  /@rester/orm/0.18.5_mongodb@4.1.2:
-    resolution: {integrity: sha512-hHn2iospYYgZwp4rz8QTSSq8HmLLqtlRG7qGH9Duth/72zUh4UqxgtrK0w5OMk2wGrIkleN3sxHCwTUd2WPT6w==}
+  /@rester/orm/0.18.6_mongodb@4.1.2:
+    resolution: {integrity: sha512-HU0LeuNGzCzG3HeGGRKH6fhgfZay54nYj17w43+mYDLylVC7ixLr9ldyEreZuU30aBXd0bHcjCBVrCcFi+hJQQ==}
     peerDependencies:
       mongodb: ^4.1.2
     dependencies:
-      '@rester/logger': 0.18.5
+      '@rester/logger': 0.18.6
       aws4: 1.11.0
       mongodb: 4.1.2
       reflect-metadata: 0.1.13
       saslprep: 1.0.3
     dev: false
 
-  /@rester/queue/0.18.5:
-    resolution: {integrity: sha512-8n4lP0r+IRB/iAw2k4HiwwZWFN2MJ6mZQLchSyWAW8dY2BPYpT4GrP8BCF7au5JPJOOYze6nfzV+QHSU6Q6lqQ==}
+  /@rester/queue/0.18.6:
+    resolution: {integrity: sha512-Mm7SUvtGvkwwvqhOWgDg9v41uObW5zBCDEVaIZiCdJVywtdJKWFXYJaNPQUi0nF1TXCL33UQgghCMOhsyfoN7w==}
     dependencies:
       ioredis: 4.27.9
       uuid: 8.3.2
