@@ -8,6 +8,8 @@ import { paths } from './app/router';
 import { statistic } from './app/ware';
 import { environment } from './environments/environment';
 
+const isProd = () => process.env.NODE_ENV === 'production';
+
 const config: KBSConfig = {
   router: {
     paths,
@@ -15,7 +17,7 @@ const config: KBSConfig = {
   },
   address: {
     portocol: 'HTTP',
-    host: '0.0.0.0',
+    host: isProd() ? '0.0.0.0' : 'localhost',
     port: 8080,
   },
   database: {
