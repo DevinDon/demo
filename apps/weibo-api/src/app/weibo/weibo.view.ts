@@ -21,7 +21,7 @@ export class WeiboView extends BaseView {
   async init() {
     this.entity = getEntity(WeiboEntity);
     this.HTML.index = isProd() ? 'assets/index.html' : 'apps/weibo-api/src/assets/index.html';
-    this.HTML.login = isProd() ? 'assets/login.html' : 'apps/weibo-api/src/resources/login.html';
+    this.HTML.login = isProd() ? 'assets/login.html' : 'apps/weibo-api/src/assets/login.html';
   }
 
   @GET()

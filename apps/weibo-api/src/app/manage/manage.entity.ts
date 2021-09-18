@@ -1,6 +1,6 @@
 import { logger, Logger } from '@rester/logger';
 import { Column, Entity, getEntity, MongoEntity, ObjectId, PaginationParam } from '@rester/orm';
-import fetch from 'node-fetch';
+import fetch from 'cross-fetch';
 import { URLSearchParams } from 'url';
 import { AccessEntity } from '../access/access.entity';
 import { CommentEntity } from '../comment/comment.entity';

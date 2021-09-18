@@ -1,9 +1,10 @@
 import { EditOutlined, UserOutlined } from '@ant-design/icons';
 import { Affix, Row } from 'antd';
+import { useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { Link } from 'react-router-dom';
 import { useDispatch, useMappedState } from 'redux-react-hook';
-import { getPublicTimeline } from '../../actions/timeline';
+import { getHomeTimeline } from '../../actions/timeline';
 import { LOGIN_URL } from '../../constants';
 import CommentsList from './components/commentsList';
 import Post from './components/post';
@@ -14,11 +15,14 @@ const mapStateTimeline = state => state.timeline;
 export const Home = () => {
   const dispatch = useDispatch();
   const {
-    home: { posts = [], page } = {},
-    current
+    home: { posts = [], page = 1 } = {},
+    current,
   } = useMappedState(mapStateTimeline);
+  const newPage = useCallback(page => {
+    dispatch(getHomeTimeline({ page: page + 1 }));
+  }, [dispatch]);
   const handleInfiniteOnLoad = () => {
-    dispatch(getPublicTimeline({ page: page + 1 }));
+    newPage(page);
   };
 
   return (

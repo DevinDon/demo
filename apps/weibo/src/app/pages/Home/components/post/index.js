@@ -14,7 +14,7 @@ export const getPostTitle = (
 ) => (
   <div className={styles.user}>
     <img
-      src={user.profile_image_url}
+      src={user?.profile_image_url || notFoundSvg}
       className={styles.avatar}
       alt={user.screen_name}
     />

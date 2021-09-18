@@ -117,19 +117,14 @@ export class CommentEntity extends MongoEntity<Comment> implements Comment {
   }
 
   async deleteCommentByCommentID({ cid, user }: DeleteCommentParam) {
-    const comment = await this.collection.findOne({
-      where: {
-        id: cid,
-        'user.id': +user.id,
-      },
-    });
+    const comment = await this.collection.findOne({ id: cid, 'user.id': user.id });
     if (!comment) {
       return { status: `comment ${cid} is not exist` };
     } else {
-      const result = this.collection.deleteOne({ id: cid });
+      this.collection.deleteOne({ id: cid });
       // update count of status
       await this.getStatusEntity().collection.updateOne({ id: comment.status.id }, { $inc: { comments_count: -1 } });
-      return result;
+      return { id: cid };
     }
   }
 

@@ -7,7 +7,7 @@ export function createComment(params = {}, isFirst) {
     try {
       const result = await api.createComment(params);
       if (result) {
-        message.success('评论成功!');
+        message.success('评论成功');
         if (!isFirst) {
           dispatch({
             type: ADD_COMMENT,
@@ -16,7 +16,7 @@ export function createComment(params = {}, isFirst) {
         }
       }
     } catch (e) {
-      message.error(e.message || '评论失败!');
+      message.error('请先点击左上角登录');
     }
   };
 }
@@ -50,11 +50,13 @@ export function deleteComment(payload = {}) {
   return async dispatch => {
     const { id } = await api.deleteComment(payload);
     if (id) {
-      message.success('删除评论成功！');
+      message.success('评论删除成功');
       dispatch({
         type: REMOVE_COMMENT,
         payload: id,
       });
+    } else {
+      message.error('评论删除失败');
     }
   };
 }
