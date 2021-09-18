@@ -10,7 +10,10 @@ ENV DB_HOST=${SET_DB_HOST} \
   DB_PORT=${SET_DB_PORT} \
   DB_NAME=${SET_DB_NAME} \
   DB_USER=${SET_DB_USER} \
-  DB_PASS=${SET_DB_PASS}
+  DB_PASS=${SET_DB_PASS} \
+  NODE_ENV=production
+
+WORKDIR /app
 
 COPY ["./dist/apps/weibo-api", "/app"]
 

@@ -11,11 +11,11 @@ import { environment } from './environments/environment';
 const config: KBSConfig = {
   router: {
     paths,
-    version: 'api',
+    version: '',
   },
   address: {
     portocol: 'HTTP',
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8080,
   },
   database: {

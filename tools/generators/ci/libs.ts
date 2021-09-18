@@ -16,8 +16,13 @@ export const print = async (output: ProcessOutput) => {
   output.stderr && console.error(output.stderr);
 };
 
-export const getAppList = () =>
-  readdirSync(`${process.env.BUILD_DIR}/dist/apps/`);
+export const getAppList = () => {
+  try {
+    return readdirSync(`${process.env.BUILD_DIR}/dist/apps/`);
+  } catch (error) {
+    return [];
+  }
+};
 
 export const getImageName = (app: string) =>
   `${process.env.ALIYUN_REGISTRY}/iinfinity/${app}`;
@@ -63,4 +68,4 @@ export const pushAllImages = async (apps: string[]) => Promise.all(
 );
 
 export const installDocker = async () =>
-  $`wget -qO- https://get.docker.com/ | sh`.then(print);
+  $`wget -qO- https://get.docker.com/ | sh`;

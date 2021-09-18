@@ -7,7 +7,7 @@ import { HostID, HostInsertParams, HostUpdateParams } from './host.model';
 // create, remove, modify, take, search
 // one, more
 
-@View('api/host')
+@View('host')
 @Handler(UserAuthHandler)
 export class HostView extends BaseView {
 

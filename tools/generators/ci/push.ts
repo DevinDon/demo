@@ -9,4 +9,6 @@ import { getAppList, loginToDocker, print, pushAllImages } from './libs';
   await pushAllImages(apps)
     .then(outputs => outputs.forEach(print));
 
+  console.log('All images pushed, image list:\n\t', apps.join('\n\t'));
+
 })();

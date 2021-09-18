@@ -40,7 +40,7 @@ import { WaveComponent } from './wave/wave.component';
   providers: [
     AppService,
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
-    { provide: RouteReuseStrategy, useClass: RouteReuseHandler },
+    // { provide: RouteReuseStrategy, useClass: RouteReuseHandler },
   ],
 })
 export class AppModule { }

@@ -120,7 +120,7 @@ export class CommentEntity extends MongoEntity<Comment> implements Comment {
     const comment = await this.collection.findOne({
       where: {
         id: cid,
-        'user.id': user.id,
+        'user.id': +user.id,
       },
     });
     if (!comment) {

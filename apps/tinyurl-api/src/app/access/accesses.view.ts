@@ -3,7 +3,7 @@ import { getEntity } from '@rester/orm';
 import { UserAuthHandler } from '../common/handlers';
 import { AccessEntity } from './access.entity';
 
-@View('api/accesses')
+@View('accesses')
 @Handler(UserAuthHandler)
 export class AccessView extends BaseView {
 

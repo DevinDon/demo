@@ -37,7 +37,7 @@ const notFound: Middleware = async (c, next) => {
       c.body = files.index;
       c.status = 200;
     } else {
-      c.redirect('/api');
+      c.redirect('/');
     }
   }
 };

@@ -8,7 +8,7 @@ import { LinkID, LinkInsertParams, LinkUpdateParams } from './link.model';
 // create, remove, modify, take, search
 // one, more
 
-@View('api/link')
+@View('link')
 export class LinkView extends BaseView {
 
   private entity: LinkEntity;

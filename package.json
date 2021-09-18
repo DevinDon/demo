@@ -4,13 +4,14 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "build:hot": "nx build tinyurl && nx build blog-over && rm -rf dist",
-    "build": "NODE_ENV=production nx run-many --target=build --all=true --parallel=true --maxParallel=4 --prod",
-    "build:affected": "NODE_ENV=production nx affected --target=build --base=main --head=release --parallel=true --maxParallel=4 --prod",
+    "build:hot": "nx build tinyurl --prod && nx build blog-over --prod && nx build zhihu --prod && rm -rf dist",
+    "build": "NODE_ENV=production nx affected --target=build --all=true --parallel=false --prod",
+    "build:affected": "NODE_ENV=production nx affected --target=build --base=main --head=release --parallel=false --prod",
     "images:build": "nx workspace-schematic ci build",
     "images:push": "nx workspace-schematic ci push",
     "test": "nx test",
-    "ci-prepare": "npm i -g pnpm && pnpm i"
+    "ci-prepare": "npm i -g pnpm && pnpm i",
+    "release:new": "git fetch --prune && git checkout main && git pull -v && git branch -D release && git branch release && git checkout release"
   },
   "private": true,
   "dependencies": {

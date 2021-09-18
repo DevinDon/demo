@@ -2,6 +2,7 @@ import { LikeOutlined, MessageOutlined, RetweetOutlined } from '@ant-design/icon
 import { Card } from 'antd';
 import moment from 'moment';
 import { useDispatch } from 'redux-react-hook';
+import notFoundSvg from '../../../../../assets/404.svg';
 import { setCurrentPost } from '../../../../actions/timeline';
 import { APP_URI } from '../../../../constants';
 import styles from './index.module.scss';
@@ -92,7 +93,7 @@ const Post = ({
                 <div className={styles.imgContainer}>
                   <img src={thumbnail_pic}
                     alt={thumbnail_pic}
-                    onError={({ currentTarget }) => currentTarget.src = `/${process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/' : ''}404.svg`}
+                    onError={({ currentTarget }) => currentTarget.src = notFoundSvg}
                   />
                 </div>
               </li>

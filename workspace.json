@@ -260,7 +260,8 @@
             "styles": [
               "apps/blog-over/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -443,7 +444,8 @@
             "styles": [
               "apps/tinyurl/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
@@ -948,7 +950,8 @@
               "apps/zhihu/src/styles/index.scss",
               "apps/zhihu/src/styles/material.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {

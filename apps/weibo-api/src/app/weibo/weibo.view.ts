@@ -1,5 +1,5 @@
 import { BaseView, GET, Handler, HandlerZone, HTTP400Exception, HTTPResponse, Part, partsToObject, PathQuery, POST, RequestBody, requiredParams, ResourceResponse, View } from '@rester/core';
-import { getEntity, isProd } from '@rester/orm';
+import { getEntity } from '@rester/orm';
 import { ServerResponse } from 'http';
 import { generateCode } from '../common/constants';
 import { UserAuthHandler } from '../common/handlers';
@@ -10,6 +10,8 @@ import { WeiboEntity } from './weibo.entity';
 // create, remove, modify, take, search
 // one, more
 
+const isProd = () => process.env.NODE_ENV === 'production';
+
 @View()
 export class WeiboView extends BaseView {
 
@@ -17,8 +19,8 @@ export class WeiboView extends BaseView {
 
   async init() {
     this.entity = getEntity(WeiboEntity);
-    this.HTML.index = isProd() ? 'resources/index.html' : 'src/resources/index.html';
-    this.HTML.login = isProd() ? 'resources/login.html' : 'src/resources/login.html';
+    this.HTML.index = isProd() ? 'assets/index.html' : 'apps/weibo-api/src/assets/index.html';
+    this.HTML.login = isProd() ? 'assets/login.html' : 'apps/weibo-api/src/resources/login.html';
   }
 
   private readonly HTML: any = {};
