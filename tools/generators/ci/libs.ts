@@ -43,11 +43,20 @@ export const buildAllImages = async (apps: string[]) => Promise.all(
     const envSafeName = app.replace(/-/g, '_').toUpperCase();
     return image.includes('api')
       ? $`docker build \\
+          --build-arg SET_PROTOCOL=${process.env[envSafeName + '_SET_PROTOCOL']} \\
+          --build-arg SET_HOST=${process.env[envSafeName + '_SET_HOST']} \\
+          --build-arg SET_PORT=${process.env[envSafeName + '_SET_PORT']} \\
           --build-arg SET_DB_HOST=${process.env[envSafeName + '_SET_DB_HOST']} \\
           --build-arg SET_DB_PORT=${process.env[envSafeName + '_SET_DB_PORT']} \\
           --build-arg SET_DB_USER=${process.env[envSafeName + '_SET_DB_USER']} \\
           --build-arg SET_DB_PASS=${process.env[envSafeName + '_SET_DB_PASS']} \\
           --build-arg SET_DB_NAME=${process.env[envSafeName + '_SET_DB_NAME']} \\
+          --build-arg SET_AUTH=${process.env[envSafeName + '_SET_AUTH']} \\
+          --build-arg SET_HANDLER_POOL_MAX=${process.env[envSafeName + '_SET_HANDLER_POOL_MAX']} \\
+          --build-arg SET_LOGGER_LEVEL=${process.env[envSafeName + '_SET_LOGGER_LEVEL']} \\
+          --build-arg SET_LOGGER_TRACE=${process.env[envSafeName + '_SET_LOGGER_TRACE']} \\
+          --build-arg SET_LOGGER_LOGOUT=${process.env[envSafeName + '_SET_LOGGER_LOGOUT']} \\
+          --build-arg SET_LOGGER_LOGERR=${process.env[envSafeName + '_SET_LOGGER_LOGERR']} \\
           -t ${image}:${process.env.DATETIME} \\
           -t ${image}:latest \\
           -f apps/${app}/Dockerfile \\

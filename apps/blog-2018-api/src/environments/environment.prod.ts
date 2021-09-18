@@ -7,6 +7,6 @@ export const environment = {
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
     synchronize: false,
-    logging: true,
+    logging: false,
   },
 };
