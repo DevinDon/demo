@@ -72,7 +72,7 @@ export class LinkView extends BaseView {
     if (!link) {
       throw new HTTP404Exception(`Link '${id}' not found.`);
     }
-    return new RedirectResponse({ url: link.origin, temporarily: true });
+    return new RedirectResponse({ url: encodeURI(link.origin), temporarily: true });
   }
 
 }
