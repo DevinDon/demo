@@ -8,9 +8,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-2017",
             "index": "apps/blog-2017/src/index.html",
@@ -24,9 +22,7 @@
               "apps/blog-2017/src/jquery",
               "apps/blog-2017/src/page"
             ],
-            "styles": [
-              "apps/blog-2017/src/styles.css"
-            ],
+            "styles": ["apps/blog-2017/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -67,26 +63,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2017/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/blog-2017/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-2017"
-          ],
+          "outputs": ["coverage/apps/blog-2017"],
           "options": {
             "jestConfig": "apps/blog-2017/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "blog-2018": {
       "projectType": "application",
@@ -95,9 +86,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-2018",
             "index": "apps/blog-2018/src/index.html",
@@ -108,9 +97,7 @@
               "apps/blog-2018/src/favicon.ico",
               "apps/blog-2018/src/assets"
             ],
-            "styles": [
-              "apps/blog-2018/src/styles.less"
-            ],
+            "styles": ["apps/blog-2018/src/styles.less"],
             "scripts": []
           },
           "configurations": {
@@ -152,26 +139,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2018/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/blog-2018/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-2018"
-          ],
+          "outputs": ["coverage/apps/blog-2018"],
           "options": {
             "jestConfig": "apps/blog-2018/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "blog-2018-api": {
       "root": "apps/blog-2018-api",
@@ -180,16 +162,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-2018-api",
             "main": "apps/blog-2018-api/src/main.ts",
             "tsConfig": "apps/blog-2018-api/tsconfig.app.json",
-            "assets": [
-              "apps/blog-2018-api/src/assets"
-            ],
+            "assets": ["apps/blog-2018-api/src/assets"],
             "webpackConfig": "apps/blog-2018-api/webpack.config.js"
           },
           "configurations": {
@@ -214,26 +192,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/blog-2018-api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/blog-2018-api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-2018-api"
-          ],
+          "outputs": ["coverage/apps/blog-2018-api"],
           "options": {
             "jestConfig": "apps/blog-2018-api/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "blog-over": {
       "projectType": "application",
@@ -243,9 +216,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/blog-over",
             "index": "apps/blog-over/src/index.html",
@@ -257,9 +228,7 @@
               "apps/blog-over/src/favicon.ico",
               "apps/blog-over/src/assets"
             ],
-            "styles": [
-              "apps/blog-over/src/styles.scss"
-            ],
+            "styles": ["apps/blog-over/src/styles.scss"],
             "scripts": [],
             "preserveSymlinks": true
           },
@@ -325,15 +294,14 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/blog-over"
-          ],
+          "outputs": ["coverage/apps/blog-over"],
           "options": {
             "jestConfig": "apps/blog-over/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "index": {
       "projectType": "application",
@@ -342,22 +310,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/index",
             "index": "apps/index/src/index.html",
             "main": "apps/index/src/main.ts",
             "polyfills": "apps/index/src/polyfills.ts",
             "tsConfig": "apps/index/tsconfig.app.json",
-            "assets": [
-              "apps/index/src/favicon.ico",
-              "apps/index/src/assets"
-            ],
-            "styles": [
-              "apps/index/src/styles.less"
-            ],
+            "assets": ["apps/index/src/favicon.ico", "apps/index/src/assets"],
+            "styles": ["apps/index/src/styles.less"],
             "scripts": []
           },
           "configurations": {
@@ -398,26 +359,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/index/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/index/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/index"
-          ],
+          "outputs": ["coverage/apps/index"],
           "options": {
             "jestConfig": "apps/index/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "tinyurl": {
       "projectType": "application",
@@ -427,9 +383,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/tinyurl",
             "index": "apps/tinyurl/src/index.html",
@@ -441,9 +395,7 @@
               "apps/tinyurl/src/favicon.ico",
               "apps/tinyurl/src/assets"
             ],
-            "styles": [
-              "apps/tinyurl/src/styles.scss"
-            ],
+            "styles": ["apps/tinyurl/src/styles.scss"],
             "scripts": [],
             "preserveSymlinks": true
           },
@@ -513,15 +465,14 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/tinyurl"
-          ],
+          "outputs": ["coverage/apps/tinyurl"],
           "options": {
             "jestConfig": "apps/tinyurl/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "tinyurl-api": {
       "root": "apps/tinyurl-api",
@@ -530,16 +481,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/tinyurl-api",
             "main": "apps/tinyurl-api/src/main.ts",
             "tsConfig": "apps/tinyurl-api/tsconfig.app.json",
-            "assets": [
-              "apps/tinyurl-api/src/assets"
-            ],
+            "assets": ["apps/tinyurl-api/src/assets"],
             "webpackConfig": "apps/tinyurl-api/webpack.config.js"
           },
           "configurations": {
@@ -575,22 +522,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/tinyurl-api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/tinyurl-api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/tinyurl-api"
-          ],
+          "outputs": ["coverage/apps/tinyurl-api"],
           "options": {
             "jestConfig": "apps/tinyurl-api/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "todo-list": {
       "root": "apps/todo-list",
@@ -599,9 +543,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/todo-list",
             "index": "apps/todo-list/src/index.html",
@@ -612,9 +554,7 @@
               "apps/todo-list/src/favicon.ico",
               "apps/todo-list/src/assets"
             ],
-            "styles": [
-              "apps/todo-list/src/styles.css"
-            ],
+            "styles": ["apps/todo-list/src/styles.css"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -658,26 +598,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/todo-list/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/todo-list/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/todo-list"
-          ],
+          "outputs": ["coverage/apps/todo-list"],
           "options": {
             "jestConfig": "apps/todo-list/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "user-center": {
       "root": "apps/user-center",
@@ -686,9 +621,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/user-center",
             "index": "apps/user-center/src/index.html",
@@ -699,9 +632,7 @@
               "apps/user-center/src/favicon.ico",
               "apps/user-center/src/assets"
             ],
-            "styles": [
-              "apps/user-center/src/styles.less"
-            ],
+            "styles": ["apps/user-center/src/styles.less"],
             "scripts": [],
             "webpackConfig": "apps/user-center/webpack.config.js"
           },
@@ -745,26 +676,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/user-center/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/user-center/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/user-center"
-          ],
+          "outputs": ["coverage/apps/user-center"],
           "options": {
             "jestConfig": "apps/user-center/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "weibo": {
       "root": "apps/weibo",
@@ -773,22 +699,15 @@
       "targets": {
         "build": {
           "executor": "@nrwl/web:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/weibo",
             "index": "apps/weibo/src/index.html",
             "main": "apps/weibo/src/main.js",
             "polyfills": "apps/weibo/src/polyfills.js",
             "tsConfig": "apps/weibo/tsconfig.app.json",
-            "assets": [
-              "apps/weibo/src/favicon.ico",
-              "apps/weibo/src/assets"
-            ],
-            "styles": [
-              "apps/weibo/src/styles.scss"
-            ],
+            "assets": ["apps/weibo/src/favicon.ico", "apps/weibo/src/assets"],
+            "styles": ["apps/weibo/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -833,26 +752,21 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/weibo/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/weibo/**/*.{ts,tsx,js,jsx}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/weibo"
-          ],
+          "outputs": ["coverage/apps/weibo"],
           "options": {
             "jestConfig": "apps/weibo/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "weibo-api": {
       "root": "apps/weibo-api",
@@ -861,16 +775,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/weibo-api",
             "main": "apps/weibo-api/src/main.ts",
             "tsConfig": "apps/weibo-api/tsconfig.app.json",
-            "assets": [
-              "apps/weibo-api/src/assets"
-            ],
+            "assets": ["apps/weibo-api/src/assets"],
             "webpackConfig": "apps/weibo-api/webpack.config.js"
           },
           "configurations": {
@@ -906,22 +816,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/weibo-api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/weibo-api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/weibo-api"
-          ],
+          "outputs": ["coverage/apps/weibo-api"],
           "options": {
             "jestConfig": "apps/weibo-api/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "zhihu": {
       "projectType": "application",
@@ -931,9 +838,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/zhihu",
             "index": "apps/zhihu/src/index.html",
@@ -941,10 +846,7 @@
             "polyfills": "apps/zhihu/src/polyfills.ts",
             "tsConfig": "apps/zhihu/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/zhihu/src/favicon.ico",
-              "apps/zhihu/src/assets"
-            ],
+            "assets": ["apps/zhihu/src/favicon.ico", "apps/zhihu/src/assets"],
             "styles": [
               "apps/zhihu/src/styles/editor.scss",
               "apps/zhihu/src/styles/index.scss",
@@ -1015,60 +917,14 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/zhihu"
-          ],
+          "outputs": ["coverage/apps/zhihu"],
           "options": {
             "jestConfig": "apps/zhihu/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@rester/nx"
-  },
-  "defaultProject": "index",
-  "generators": {
-    "@nrwl/web:application": {
-      "style": "less",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/web:library": {
-      "style": "less",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    },
-    "@nrwl/react": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint",
-        "babel": true
       },
-      "component": {
-        "style": "scss"
-      },
-      "library": {
-        "style": "scss",
-        "linter": "eslint"
-      }
+      "tags": []
     }
   }
 }
